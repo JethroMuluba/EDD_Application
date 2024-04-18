@@ -1,0 +1,33 @@
+{
+    "icones" : [
+        {
+            "linkName" : "Dashboard",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713451696/EDD_App/pzqi60hzfvhlfphj1llw.svg"
+        },
+
+        {
+            "linkName" : "Dépenses",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/oxbhmc44uc0ujltawfqe.svg"
+        },
+
+        {
+            "linkName" : "Statistiques",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458284/EDD_App/ihzvnbkmy3xajvao8u5c.svg"
+        },
+
+        {
+            "linkName" : "Notifications",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/dw21qyzgbnyow6zle08k.svg"
+        },
+
+        {
+            "linkName" : "Paramètres",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/cfjko8xpgrfhoqt5aidb.svg"
+        },
+
+        {
+            "linkName" : "Se déconnecter",
+            "icDashboard" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/w9mwwen2r4nj30x1zcao.svg"
+        }
+    ]
+}
