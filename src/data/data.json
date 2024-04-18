@@ -28,6 +28,12 @@
         {
             "linkName" : "Se déconnecter",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/w9mwwen2r4nj30x1zcao.svg"
+        },
+
+        {
+            "notif" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/bctaz4a7qfwb8lq7j5g0.svg",
+            "add" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/yqiu7swu7qycbqo02uld.svg",
+            "userAvatar" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473981/EDD_App/ze9j80ingyybxwwkgzhl.png"
         }
     ],
 
