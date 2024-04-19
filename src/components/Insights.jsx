@@ -5,13 +5,13 @@ import data from '../data/data.json';
 function Insights() {
   return (
     <div className='flex justify-between'>
-        <div className='flex gap-[16px] py-[30px] px-[21px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className='bg-[#34B77B] rounded-full p-[14px] hover:bg-[#2FA46E]'>
-                <img  src={data.Insights[0].icone} alt="Calandar Icone" />
+            <span className='bg-[#34B77B] rounded-full px-[20px] py-[14px] hover:bg-[#2FA46E]'>
+                <img className='pt-[7px] '  src={data.Insights[0].icone} alt="Calandar Icone" />
             </span>
 
-            <div className='flex flex-col '>
+            <div className='flex flex-col mr-[25px] '>
                 <h2  className='text-[26px] text-[#222834] '>
                     FC {data.Insights[0].mountant}
                 </h2>
@@ -20,6 +20,9 @@ function Insights() {
                     {data.Insights[0].title}
                 </h3>
             </div>
+            <span>
+                <img src={data.Insights[0].border} alt="" />
+            </span>
         </div>
 
         <div className='flex gap-[16px] py-[30px] px-[21px] rounded-[10px] shadow-md py-[17px]'>
