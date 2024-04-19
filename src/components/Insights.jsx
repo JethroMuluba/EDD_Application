@@ -25,10 +25,10 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex justify-between gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-start gap-[20px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className='bg-[#F4BA40] rounded-full px-[18px] py-[12px]  hover:bg-[#DFAA3B]'>
-                <img className='pt-[7px] '  src={data.Insights[1].icone} alt="Clock Icone" />
+            <span className='bg-[#F4BA40] rounded-full px-[16px] py-[15px]  hover:bg-[#DFAA3B]'>
+                <img className='pt-[2px] '  src={data.Insights[1].icone} alt="Clock Icone" />
             </span>
 
             <div className='flex flex-col '>
@@ -41,7 +41,7 @@ function Insights() {
                 </h3>
             </div>
 
-            <button  className='m-auto active:shadow-md active:rounded-full '>
+            <button  className='pb-[35px] m-auto active:shadow-md active:rounded-full '>
                 <img src={data.Insights[1].moreIcone} alt="" />
             </button>
 
