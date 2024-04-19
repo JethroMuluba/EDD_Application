@@ -4,7 +4,7 @@ import data from '../data/data.json';
 
 function Insights() {
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-around'>
         <div className='flex justify-between gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='bg-[#34B77B] rounded-full px-[20px] py-[14px] hover:bg-[#2FA46E]'>
@@ -25,10 +25,10 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex gap-[16px] py-[30px] px-[21px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className='bg-[#F4BA40] rounded-full p-[14px] hover:bg-[#DFAA3B]'>
-                <img  src={data.Insights[1].icone} alt="Clock Icone" />
+            <span className='bg-[#F4BA40] rounded-full px-[18px] py-[12px]  hover:bg-[#DFAA3B]'>
+                <img className='pt-[7px] '  src={data.Insights[1].icone} alt="Clock Icone" />
             </span>
 
             <div className='flex flex-col '>
@@ -36,11 +36,19 @@ function Insights() {
                     FC {data.Insights[1].mountant}
                 </h2>
 
-            <h3 className='text-base font-medium text-[#B2B3B5]'>
-                {data.Insights[1].title}
-            </h3>
+                <h3 className='text-base font-medium text-[#B2B3B5]'>
+                    {data.Insights[1].title}
+                </h3>
+            </div>
+
+            <button  className='m-auto active:shadow-md active:rounded-full '>
+                <img src={data.Insights[1].moreIcone} alt="" />
+            </button>
+
+            <span>
+                <img src={data.Insights[1].border} alt="" />
+            </span>
         </div>
-</div>
 
 
     </div>
