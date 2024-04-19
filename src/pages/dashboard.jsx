@@ -1,11 +1,16 @@
 import React from 'react'
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Insights from '../components/Insights';
 
 function Dashboard() {
   return (
-    <div className='bg-white w-4/5 text-black'>
+    <section className='bg-white w-4/5 text-black'>
       <Header/>
-    </div>
+      <main className='p-[24px] '>
+        <Insights/>
+      </main>
+
+    </section>
   )
 }
 

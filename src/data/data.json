@@ -1,36 +1,43 @@
 {
     "icones" : [
         {
+            "id" : 0,
             "linkName" : "Dashboard",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713468708/EDD_App/iholase6dzhicmhtgkrk.svg"
         },
 
         {
+            "id" : 1,
             "linkName" : "Dépenses",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/oxbhmc44uc0ujltawfqe.svg"
         },
 
         {
+            "id" : 2,
             "linkName" : "Statistiques",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458284/EDD_App/ihzvnbkmy3xajvao8u5c.svg"
         },
 
         {
+            "id" : 3,
             "linkName" : "Notifications",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/dw21qyzgbnyow6zle08k.svg"
         },
 
         {
+            "id" : 4,
             "linkName" : "Paramètres",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/cfjko8xpgrfhoqt5aidb.svg"
         },
 
         {
+            "id" : 5,
             "linkName" : "Se déconnecter",
             "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458285/EDD_App/w9mwwen2r4nj30x1zcao.svg"
         },
 
         {
+            "id" : 6,
             "notif" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/bctaz4a7qfwb8lq7j5g0.svg",
             "add" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/yqiu7swu7qycbqo02uld.svg",
             "userAvatar" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473981/EDD_App/ze9j80ingyybxwwkgzhl.png"
@@ -39,9 +46,33 @@
 
     "logo" : [
         {
+            "id" : 0,
             "darkMode" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713458782/EDD_App/cbludpagphn2odvpshlk.png"
         }
     ],
 
-    "copyRight" : "Copy Right 2024 By Jethro Code"
+    "copyRight" : "Copy Right 2024 By Jethro Code",
+
+    "Insights" : [
+        {
+            "id" : 0,
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/habxlsovr1b6vrffjdnx.svg",
+            "mountant" : 500000,
+            "title" : "Revenu Mensuelle"
+        },
+
+        {
+            "id" : 1,
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/fxhnwmxdynj947tz8sgg.svg",
+            "mountant" : 20000,
+            "title" : "Dépenses du Jour"
+        },
+
+        {
+            "id" : 2,
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/wduntybqgftob3caufkf.svg",
+            "mountant" : 150000,
+            "title" : "Reste Mensuel"
+        }
+    ]
 }
