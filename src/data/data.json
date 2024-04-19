@@ -41,6 +41,11 @@
             "notif" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/bctaz4a7qfwb8lq7j5g0.svg",
             "add" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473692/EDD_App/yqiu7swu7qycbqo02uld.svg",
             "userAvatar" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713473981/EDD_App/ze9j80ingyybxwwkgzhl.png"
+        },
+
+        {
+            "id" :7,
+            "arrowDown" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713531769/EDD_App/lue57idmptf1qnkhhxfl.svg"
         }
     ],
 
@@ -77,6 +82,24 @@
             "mountant" : 150000,
             "title" : "Reste Mensuel",
             "border" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713520051/EDD_App/x9bchlwfstd3e2fl8dqj.svg"
+        }
+    ],
+
+    "expensiveData" : [
+        {
+            "id" : 0,
+            "title" : "Mes Dépenses",
+            "previewDate" : "04-01-2024",
+            "nowDate" : "19-04-2024",
+            "filter" : "Filtré par",
+            "filterMode" : [
+                {
+                    "filterByDay" : "Jour",
+                    "filterByWeek" : "Semaine",
+                    "filterByMonth" : "Mois",
+                    "filterByHour" : "08h45"
+                }
+            ]
         }
     ]
 }
