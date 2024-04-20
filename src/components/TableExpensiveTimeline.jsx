@@ -65,10 +65,10 @@ function TableExpensiveTimeline() {
                 <tr className=''>
                     <td className='px-6 py-4 whitespace-nowrap ' colSpan="6">
                         <div className='flex gap-2'>
-                        <h3 className="text-gray-500">Aucune dépenses enregistrée pour le moment !</h3>
-
-                            <h3 className="text-gray-500">Veuillez cliquer sur</h3>
-                            <button className='active:shadow-md active:rounded-full'><img src={data.icones[6].add} alt="" /></button>
+                            <h3 className="text-gray-500">Aucune dépenses enregistrée pour le moment ! Veuillez cliquer sur</h3>
+                            <button className='active:shadow-md active:rounded-full'>
+                                <img src={data.icones[6].add} alt="" />
+                            </button>
                             <h3 className="text-gray-500">pour commencer</h3>
                         </div>
                     </td>

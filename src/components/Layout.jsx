@@ -2,7 +2,7 @@ import React from 'react'
 
 function Layout({ children }) {
   return (
-    <div className='flex flex-row h-screen'>
+    <div className='flex flex-row '>
         {children}
     </div>
   )
