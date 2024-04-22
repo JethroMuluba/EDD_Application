@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Notifications = () => {
+const Login = () => {
   return (
     <h3>
         This page is on building
@@ -8,4 +8,4 @@ const Notifications = () => {
   )
 }
 
-export default Notifications;
+export default Login;
