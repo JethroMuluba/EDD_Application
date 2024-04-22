@@ -6,7 +6,7 @@ import ExpensiveTimeLine from '../components/ExpensiveTimeLine';
 function Dashboard() {
   return (
     <section className='bg-white w-4/5'>
-      <Header/>
+      <Header headerTitle={`Dashboard`} />
       <main className='flex flex-col gap-[24px] p-[24px] '>
         <Insights/>
         <section>
