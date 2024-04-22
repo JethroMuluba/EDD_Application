@@ -39,7 +39,7 @@ function HeaderActions() {
                 
                 <img className='w-8 h-8 rounded-full' onClick={toggleMenu} src={data.icones[6].userAvatar} alt="User Avatar" />
                 {toggleAvatar && (
-                    <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-950 rounded-[7px] pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
+                    <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-950 rounded-[7px] shadow-xl shadow-gray-200 transition-shadow duration-150 ease-in-out pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
                         {/* px-[10px] py-[10px] */}
                         <li>
                             <Link to={'/Paramètres'} className='flex items-center gap-2 '>
