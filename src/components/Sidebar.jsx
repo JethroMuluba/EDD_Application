@@ -75,8 +75,8 @@ function Sidebar() {
         </ul>
       </nav>
 
-      <div>
-        <span className='flex items-center  gap-[20px]  py-[10px] px-[27px] cursor-pointer hover:bg-cyan-900 hover:text-[#F4CA8D]' onClick={() => handleClick('/Login')}>
+      <div className='flex flex-col gap-[10px]'>
+        <span className='flex items-center  gap-[20px] border-b border-gray-600  py-[10px] px-[27px] cursor-pointer hover:bg-cyan-900 hover:text-[#F4CA8D]' onClick={() => handleClick('/Login')}>
             <span >
               <img src={data.icones[5].icone} alt="" />
             </span>

@@ -7,7 +7,7 @@ function Insights() {
     <div className='flex justify-between h-[7rem]'>
         <div className='flex justify-between items-center gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className='bg-[#34B77B] rounded-full px-[17px] py-[15px] px-[20px] py-[14px] hover:bg-[#2FA46E]'>
+            <span className='bg-[#34B77B] rounded-full px-[16px] py-[15px] px-[20px] py-[14px] hover:bg-[#2FA46E]'>
                 <img className='pt-[2px] '  src={data.Insights[0].icone} alt="Calandar Icone" />
             </span>
 
