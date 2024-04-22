@@ -1,10 +1,17 @@
 import React from 'react'
+import Header from '../components/Header';
 
 const Paramètres = () => {
   return (
-    <h3>
-        This page is on building
-    </h3>
+    <section className='bg-white w-4/5'>
+        <Header/>
+    <main className='flex flex-col gap-[24px] p-[24px] '>
+        <h3 className='text-base text-[#222834]'>
+            Settings page is on building ...!
+        </h3>
+    </main>
+
+  </section>
   )
 }
 
