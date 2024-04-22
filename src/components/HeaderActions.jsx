@@ -35,23 +35,24 @@ function HeaderActions() {
                 <img src={data.icones[6].notif} alt="Notification Icone" />
             </button>
 
-            <div ref={toggleRef} className='w-10 flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
+            <div ref={toggleRef} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
+                
                 <img className='w-8 h-8 rounded-full' onClick={toggleMenu} src={data.icones[6].userAvatar} alt="User Avatar" />
                 {toggleAvatar && (
-                    <ul className='absolute flex flex-col gap-[10px] bg-cyan-950 rounded-[7px] px-[20px] py-[10px] text-[12px] text-[#222834] '>
-                        
-                        <Link to={'/Paramètres'} className='hover:bg-cyan-900 '>
-                            <img src={data.tableData[0].editeIcone} alt=""  />
-                        </Link>
-                        
-                        <span >
-                        </span>
+                    <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-950 rounded-[7px] pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
+                        {/* px-[10px] py-[10px] */}
+                        <li>
+                            <Link to={'/Paramètres'} className='flex items-center gap-2 '>
+                                <img src={data.tableData[0].editeIcone} alt=""  /> <p className='text-white hover:text-[#F4CA8D]'>Profil</p>
+                            </Link>
+                        </li>
 
-                        <Link to={'/Login'} className='hover:bg-cyan-900'>
-                            <img src={data.icones[5].icone} alt=""/>
-                        </Link>
-                        <span >
-                        </span>
+                        <li>
+                            <Link to={'/Login'} className='flex items-center gap-2 '>
+                                <img src={data.icones[5].icone} alt=""/>  <p className='text-white hover:text-[#F4CA8D]'>Quittez</p>
+                            </Link>
+                        </li>
+
                     </ul>
                 )}
 
