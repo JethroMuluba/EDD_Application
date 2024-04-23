@@ -49,6 +49,9 @@ const ToggleAddIncome = ({toggleMenu}) => {
                 </ul>
             )}
 
+                {/* <button onClick={() => setShowForm(prev => !prev)}>X</button> */}
+
+
         </div>
 
     </div>
