@@ -46,6 +46,7 @@ function HeaderActions() {
 
     // Toggle Form Of Incoming
     const [showFormIncoming, setShowFormIncoming] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
     const formIncomingRef = useRef(null);
     const toggleForm = () => {
         setShowFormIncoming(!showFormIncoming);
@@ -73,9 +74,14 @@ function HeaderActions() {
             amount: data.amount,
             date: new Date().toISOString(),
         }
-        alert("Revenu enregistré avec succès");
+        // alert("Revenu enregistré avec succès");
         setShowFormIncoming(false)
         reset();
+
+        setShowMessage(true); 
+        setTimeout(() => setShowMessage(false), 3000); 
+        reset();
+        setShowFormIcoming(false);
     }
 
     // Add New Expensive
@@ -115,6 +121,12 @@ function HeaderActions() {
                     {errors.amount && <span style={{color: '#DA5643', fontSize: '16px'}}>Entrez au moins 3 chiffres</span>}
                     <button type='submit' className='bg-[#213547] px-[20px] py-[5px] rounded-[5px] hover:bg-cyan-900 text-lg font-medium  text-white  focus:outline-[#34B77B] focus:outline active:outline-none ' >Enregistrez</button>
                 </form>
+            )}
+
+            {showMessage && (
+                <div className="absolute top-[12px] right-[500px] bg-[#34B77B] text-white px-4 py-2 rounded">
+                    Revenu enregistré avec succès
+                </div>
             )}
 
             <button className='m-auto active:shadow-md active:rounded-full'>
