@@ -13,9 +13,9 @@ export const useContextGlobal = () => {
 
 const  ContextGlobalProvider = ({children}) => {
 
-    const [getData, upDateData] = useState(data.tableData);
+    const [getTableExpensiveData, upDateTableExpensiveData] = useState(data.tableData);
 return (
-    <ContextGlobal.Provider value={{getData ,upDateData}}>
+    <ContextGlobal.Provider value={{getTableExpensiveData ,upDateTableExpensiveData}}>
         {children}
     </ContextGlobal.Provider>
 )

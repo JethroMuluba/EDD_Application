@@ -5,8 +5,8 @@ import { useContextGlobal } from '../models/ContextGlobal';
 
 function TableExpensiveTimeline() {
 
-    const {getData} = useContextGlobal();
-    console.log(getData);
+    const {getTableExpensiveData} = useContextGlobal();
+    console.log(getTableExpensiveData);
   return (
     <div className="overflow-x-auto">
         <table className='min-w-full divide-y divide-gray-200 text-[#222834]'>
@@ -25,7 +25,7 @@ function TableExpensiveTimeline() {
                 </tr>
             </thead>
             <tbody className='divide-y divide-gray-200'>
-                {getData ? (getData.map((data) => (
+                {getTableExpensiveData ? (getTableExpensiveData.map((data) => (
                             <tr key={data.id} >
                                 <td className='py-[10px] pr-[26px] whitespace-nowrap'>
                                     <div className=''>
