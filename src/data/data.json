@@ -65,10 +65,10 @@
 
     "copyRight" : "Copy Right 2024 By Jethro Code",
 
-    "Insights" : [
+    "insights" : [
         {
             "id" : 0,
-            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/habxlsovr1b6vrffjdnx.svg",
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1714058134/EDD_App/ysr74vm3oxfwmiahezfx.svg",
             "mountant" : 500000,
             "title" : "Revenu Mensuelle",
             "border" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713520051/EDD_App/plbmfvclxw4y6iaadg1e.svg"
@@ -76,7 +76,7 @@
 
         {
             "id" : 1,
-            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/fxhnwmxdynj947tz8sgg.svg",
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1714058134/EDD_App/neh6ezqj5zrlwqrd9jcz.svg",
             "mountant" : 20000,
             "title" : "Dépenses du Jour",
             "border" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713520051/EDD_App/jrwfsyvf9yoa2fzqbmln.svg",
@@ -85,7 +85,7 @@
 
         {
             "id" : 2,
-            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713482275/EDD_App/wduntybqgftob3caufkf.svg",
+            "icone" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1714058134/EDD_App/ojhfeami7mziseagvp9m.svg",
             "mountant" : 150000,
             "title" : "Reste Mensuel",
             "border" : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713520051/EDD_App/x9bchlwfstd3e2fl8dqj.svg"
