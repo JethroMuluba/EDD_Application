@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import data from '../data/data.json';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useContextGlobal } from '../models/ContextGlobal';
 
 
 function HeaderActions() {
@@ -70,17 +71,18 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
+        const {addIncoming, upDateIncoming} = useContextGlobal();
         const onSubmitIncoming = (data) => {
+            const id = '1'; 
             const addNewIncoming = {
-                id: 1,
                 amount: data.amount,
-                date: new Date().toISOString(),
             }
 
             setShowMessage(true); 
             setTimeout(() => setShowMessage(false), 3000); 
             reset();
             setShowFormIncoming(false);
+            upDateIncoming(id, addNewIncoming);
         }
 
 

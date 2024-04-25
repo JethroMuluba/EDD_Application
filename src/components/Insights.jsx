@@ -6,7 +6,6 @@ import { useContextGlobal } from '../models/ContextGlobal';
 function Insights() {
     const {getInsightData} = useContextGlobal();
     const insightData = getInsightData;
-    console.log(insightData);
   return (
     <div className='flex justify-between h-[7rem]'>
         {insightData ? (insightData.map((data) => (
@@ -17,7 +16,7 @@ function Insights() {
         
                     <div className='flex flex-col mr-[25px] '>
                         <h2  className='text-[26px] text-[#222834] '>
-                            FC {data.mountant}
+                            FC {data.amount}
                         </h2>
         
                         <h3 className='text-base font-medium text-[#B2B3B5]'>

@@ -46,11 +46,41 @@ const  ContextGlobalProvider = ({children}) => {
         return 'Chargement en cours...'
     }
 
+    //Post Incoming
+    const addIncoming = (newIncoming) => {
+        axios.post('http://localhost:3000/insights', newIncoming)
+        .then((response) => upDateInsightData([response.data, ...getInsightData]));
+    };
+
+    //Put Incoming
+    const upDateIncoming = (id, incomingToUpdate) => {
+        axios.put(`http://localhost:3000/insights/${id}`, incomingToUpdate)
+            .then((res) => {
+                if (res.status === 200) {
+                    upDateInsightData(prevData => {
+                        return prevData.map(income => {
+                            if (income.id === id) {
+                                return { ...income, ...incomingToUpdate };
+                            } else {
+                                return income;
+                            }
+                        });
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error('Error updating incoming:', error);
+            });
+    }
+
 return (
     <ContextGlobal.Provider value={{getTableExpensiveData, 
                                     upDateTableExpensiveData, 
                                     getInsightData, 
-                                    upDateInsightData}}>
+                                    upDateInsightData,
+                                    addIncoming,
+                                    upDateIncoming
+                                    }}>
         {children}
     </ContextGlobal.Provider>
 )
