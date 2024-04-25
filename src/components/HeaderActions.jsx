@@ -3,6 +3,7 @@ import data from '../data/data.json';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
+
 function HeaderActions() {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -162,51 +163,31 @@ function HeaderActions() {
 
             {/* Form Of Expensive */}
             {showFormExpensive && (
-                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute top-[250px] right-[500px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
+                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute top-[250px] right-[450px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
                     
                     <div className='flex justify-between gap-[20px] '>
                         <div className='flex flex-col gap-[5px] items-start'>
                             <label htmlFor="" className='text-base text-[#213547] font-medium'>Catégories</label>
                             <select name="selectCategogy" id="" {...register("selectCategory", { required: true })} className='bg-[#fff] text-base text-[#213547] border border-[#213547] rounded-[5px] py-[6.6px] pl-[20px] outline-none'>
-                                <option value="" className='text-gray-200'>
-                                    Choisissez votre catégorie
-                                </option>
+                                <option value="" className='text-gray-200'>Choisissez votre catégorie</option>
 
-                                <option value="Dîme & Offr.">
-                                    {data.tableData[0].category}
-                                </option>
+                                <option value="Dîme & Offr."> Dîme & Offr.</option>
 
-                                <option value="Nourritures">
-                                    {data.tableData[1].category}
-                                </option>
+                                <option value="Nourritures">Nourritures</option>
 
-                                <option value="Logements">
-                                    {data.tableData[2].category}
-                                </option>
+                                <option value="Logements">Logements</option>
 
-                                <option value="Transports">
-                                    {data.tableData[3].category}
-                                </option>
+                                <option value="Transports">Transports</option>
 
-                                <option value="Vêtements">
-                                    {data.tableData[4].category}
-                                </option>
+                                <option value="Vêtements">Vêtements</option>
 
-                                <option value="Éducations">
-                                    {data.tableData[5].category}
-                                </option>
+                                <option value="Éducations">Éducations</option>
 
-                                <option value="Dettes">
-                                {data.tableData[6].category}
-                                </option>
+                                <option value="Dettes">Dettes</option>
 
-                                <option value="Loisir & Autres">
-                                    {data.tableData[7].category}
-                                </option>
+                                <option value="Loisir & Autres">Loisir & Autres</option>
 
-                                <option value="Épargnes">
-                                    {data.tableData[8].category}
-                                </option>
+                                <option value="Épargnes">Épargnes</option>
                             </select>
                             {errors.selectCategory && <span style={{ color: '#DA5643', fontSize: '12px' }}>Ce champ est requis</span>}
                         </div>

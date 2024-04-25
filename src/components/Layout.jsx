@@ -1,10 +1,15 @@
 import React from 'react'
+import ContextGlobalProvider from '../models/ContextGlobal';
 
 function Layout({ children }) {
   return (
-    <div className='flex flex-row '>
+
+    <ContextGlobalProvider>    
+      <div className='flex flex-row '>
         {children}
-    </div>
+      </div>
+    </ContextGlobalProvider>
+
   )
 }
 
