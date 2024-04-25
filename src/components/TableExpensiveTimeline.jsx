@@ -40,7 +40,7 @@ function TableExpensiveTimeline() {
                                     </span>
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    FC {data.montants}
+                                    FC {data.montant}
                                 </td>
                                 <td className='whitespace-nowrap'>
                                     {data.dates}

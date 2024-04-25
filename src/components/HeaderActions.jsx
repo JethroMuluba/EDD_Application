@@ -71,7 +71,7 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
-        const {addIncoming, upDateIncoming} = useContextGlobal();
+        const {addIncoming, upDateIncoming, addExpensive} = useContextGlobal();
         const onSubmitIncoming = (data) => {
             const id = '1'; 
             const addNewIncoming = {
@@ -111,18 +111,29 @@ function HeaderActions() {
 
     // Add New Expensive
     const onSubmitNewExpensive = (data) => {
+        const date = new Date();
+
+    const options = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    };
         const addNewExpensive = {
-            id: 1,
+            id: 10,
             category: data.selectCategory,
-            amount: data.amount,
-            date: new Date().toISOString(),
-            hour: new Date().getHours() + ":" + new Date().getMinutes(),
+            montant: data.amountExp,
+            dates: date.toLocaleDateString('en-US', options).replace(/\//g, '-'),
+            heures: new Date().getHours() + ":" + new Date().getMinutes(),
+            editeIcone: "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/x1nwk5qt3dcgzlercluo.svg",
+            limitIcone : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/nda2ylaauwzirnblonyf.svg",
+            deleteIcone : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/vl8mzzj3qjjx9bdjnnhn.svg",
         };
 
         setShowFormExpensive(false);
         reset();
         setShowMessageExpensive(true);
         setTimeout(() => setShowMessageExpensive(false), 3000);
+        addExpensive(addNewExpensive)
     }
 
     return (

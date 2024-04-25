@@ -29,6 +29,12 @@ const  ContextGlobalProvider = ({children}) => {
         return 'Chargement en cours...'
     }
 
+    //Post Expensive
+    const addExpensive = (newExpensive) => {
+        axios.post('http://localhost:3000/tableData', newExpensive)
+        .then((response) => upDateTableExpensiveData([response.data, ...getTableExpensiveData]));
+    };
+
     //Get Insight Data
     const [getInsightData, upDateInsightData]  = useState([]);
 
@@ -73,13 +79,15 @@ const  ContextGlobalProvider = ({children}) => {
             });
     }
 
+
 return (
     <ContextGlobal.Provider value={{getTableExpensiveData, 
                                     upDateTableExpensiveData, 
                                     getInsightData, 
                                     upDateInsightData,
                                     addIncoming,
-                                    upDateIncoming
+                                    upDateIncoming,
+                                    addExpensive
                                     }}>
         {children}
     </ContextGlobal.Provider>
