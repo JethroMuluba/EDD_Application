@@ -3,6 +3,7 @@ import data from '../data/data.json';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContextGlobal } from '../models/ContextGlobal';
+import { v4 as uuidv4 } from 'uuid'
 
 
 function HeaderActions() {
@@ -111,15 +112,19 @@ function HeaderActions() {
 
     // Add New Expensive
     const onSubmitNewExpensive = (data) => {
-        const date = new Date();
+    
+    const date = new Date();
 
     const options = {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric'
     };
+
+    const id = uuidv4();
+
         const addNewExpensive = {
-            id: 10,
+            id: id,
             category: data.selectCategory,
             montant: data.amountExp,
             dates: date.toLocaleDateString('en-US', options).replace(/\//g, '-'),
@@ -141,15 +146,15 @@ function HeaderActions() {
             <div ref={toggleRef2} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
                 <img src={data.icones[6].add} alt="Add Icone" onClick={toggleMenuAdd} className='m-auto active:shadow-md active:rounded-full' />
                 {toggleAdd && (
-                    <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[7px] shadow-xl shadow-gray-200 transition-shadow duration-250 ease-in-out pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
+                    <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-900 rounded-[7px] shadow-xl shadow-gray-200 transition-shadow duration-250 ease-in-out pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
                         <li>
                             <div className='flex items-center gap-2 ' onClick={() => {toggleForm(); setToggleAdd(false);}}>
-                                <img src={data.icones[6].add} alt=""  /> <p className='text-[#222834] font-medium hover:text-[#F4CA8D]'>Revenu</p>
+                                <img src={data.icones[6].addForDarkMode} alt=""  /> <p className='text-[#fff] font-medium hover:text-[#F4CA8D]'>Revenu</p>
                             </div>
                         </li>
                         <li>
                             <div className='flex items-center gap-2 'onClick={() => {toggleExpensveForm(); setToggleAdd(false);}}>
-                                <img src={data.icones[6].add} alt=""/>  <p className='text-[#222834]  font-medium hover:text-[#F4CA8D]'>Dépenses</p>
+                                <img src={data.icones[6].addForDarkMode} alt=""/>  <p className='text-[#fff]  font-medium hover:text-[#F4CA8D]'>Dépenses</p>
                             </div>
                         </li>
                     </ul>
@@ -184,7 +189,7 @@ function HeaderActions() {
                             <select name="selectCategogy" id="" {...register("selectCategory", { required: true })} className='bg-[#fff] text-base text-[#213547] border border-[#213547] rounded-[5px] py-[6.6px] pl-[20px] outline-none'>
                                 <option value="" className='text-gray-200'>Choisissez votre catégorie</option>
 
-                                <option value="Dîme & Offr."> Dîme & Offr.</option>
+                                <option value="Dîme & Offr."> <div><img src= {"https://res.cloudinary.com/dr8ofciki/image/upload/v1713473981/EDD_App/ze9j80ingyybxwwkgzhl.png"} alt="" /> Dîme & Offr.</div></option>
 
                                 <option value="Nourritures">Nourritures</option>
 
