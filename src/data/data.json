@@ -146,6 +146,16 @@
       "editeIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/x1nwk5qt3dcgzlercluo.svg",
       "limitIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/nda2ylaauwzirnblonyf.svg",
       "deleteIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/vl8mzzj3qjjx9bdjnnhn.svg"
+    },
+    {
+      "id": "338bf1a8-1155-4dcc-b95a-92f46d4b96a4",
+      "category": "Dîme & Offr.",
+      "montant": "37000",
+      "dates": "04-30-2024",
+      "heures": "20:13",
+      "editeIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/x1nwk5qt3dcgzlercluo.svg",
+      "limitIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/nda2ylaauwzirnblonyf.svg",
+      "deleteIcone": "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/vl8mzzj3qjjx9bdjnnhn.svg"
     }
   ]
 }

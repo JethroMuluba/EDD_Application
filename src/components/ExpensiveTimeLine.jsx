@@ -4,7 +4,7 @@ import TableExpensiveTimeline from './TableExpensiveTimeline';
 
 function ExpensiveTimeLine() {
   return (
-<div className='w-2/3  shadow-md rounded-[10px] p-[24px]'>
+<div className= 'flex flex-col w-full md:w-2/3  mx-auto shadow-md rounded-lg p-6'>
     <TopExpensiveTimelineElements/>
     <TableExpensiveTimeline/>
 </div>
