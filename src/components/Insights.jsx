@@ -8,9 +8,9 @@ function Insights() {
     const insightData = getInsightData;
   return (
     
-    <div className='flex justify-between h-[7rem]'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-10  '>
     {/* //     {insightData ? (insightData.map((data) => (
-    //                 <div key={data.id} className='flex justify-between items-center gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+    //                 <div key={data.id} className='flex justify-between items-center gap-[25px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
     //                 <span>
     //                     <img className=''  src={data.icone} alt="Calandar Icone" />
     //                 </span>
@@ -38,7 +38,7 @@ function Insights() {
 
         <div className='flex justify-between items-center gap-[20px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className=' rounded-full px-[15px] py-[14px]  hover:bg-[#DFAA3B]'>
+            <span className=' rounded-full px-[15px] py-[14px]'>
                 <img className='pt-[2px] '  src={data.insights[0].icone} alt="Clock Icone" />
             </span>
 
@@ -61,7 +61,7 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex justify-between items-center gap-[20px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[20px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[14px]'>
                 <img className='pt-[2px] '  src={data.insights[1].icone} alt="Clock Icone" />
@@ -86,7 +86,7 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex justify-between items-center gap-[25px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[25px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
                 <img className='pt-[px] '  src={data.insights[2].icone} alt="Calandar Icone" />
