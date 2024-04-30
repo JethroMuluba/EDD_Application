@@ -36,7 +36,7 @@ function Insights() {
 
     
 
-        <div className='flex justify-between items-center gap-[20px] py-[30px] pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[20px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className=' rounded-full px-[15px] py-[14px]'>
                 <img className='pt-[2px] '  src={data.insights[0].icone} alt="Clock Icone" />
