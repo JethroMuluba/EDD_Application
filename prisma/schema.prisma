@@ -12,3 +12,55 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+//Create Models
+
+model Utilisateur {
+  id Int @id @default(autoincrement())
+  nom String 
+  prenom String
+  adresse  String
+  telephone  Int @unique
+  email String @unique
+  password String @unique
+
+  revenuMensuelle RevenuMensuelle[]
+  depenses Depenses[]
+}
+
+model RevenuMensuelle {
+  id Int @id @default(autoincrement())
+  montant Int
+  date DateTime
+
+  idUtilisateur Int
+  utilisateur Utilisateur @relation(fields: [idUtilisateur], references: [id])
+}
+
+model Depenses {
+  id Int @id @default(autoincrement())
+  montant Int
+  date DateTime
+  heure DateTime
+
+  idUtilisateur Int
+  utilisateur Utilisateur @relation(fields: [idUtilisateur], references: [id])
+
+  idCategories Int
+  categories Categories @relation(fields: [idCategories], references: [id])
+}
+
+model Categories {
+  id Int @id @default(autoincrement())
+  dimeEtOffr String
+  nourritures String
+  logements String
+  transports String
+  vetements String
+  educations String
+  dettes String
+  loisirEtAutres String
+  epargne String
+
+  depenses Depenses[]
+}
