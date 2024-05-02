@@ -2,11 +2,13 @@ const prisma = require('../database/prima');
 
 
 const dashboardCtr = async (req, res) => {
+    const {utilisateur} = req.body
     try {
         createIncome = await prisma.revenuMensuelle.create({
             data : {
                     montant : req.body.montant,
                     date : new Date(),
+                    utilisateur : { connect : { id : utilisateur }}
             }
         });
         res.status(200).json(createIncome);
