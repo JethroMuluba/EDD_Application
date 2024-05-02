@@ -1,10 +1,10 @@
 const express = require('express');
 const dashboardRoute =  express.Router();
 
-const dashboardCtr = require('../controllers/dashboard');
+const addIncoling = require('../controllers/dashboard');
 
 
-dashboardRoute.post('/', dashboardCtr);
+dashboardRoute.post('/', addIncoling);
 
 
 

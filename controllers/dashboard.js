@@ -1,7 +1,7 @@
 const prisma = require('../database/prima');
 
 
-const dashboardCtr = async (req, res) => {
+const addIncoling = async (req, res) => {
     const {utilisateur} = req.body
     try {
         createIncome = await prisma.revenuMensuelle.create({
@@ -19,4 +19,4 @@ const dashboardCtr = async (req, res) => {
     }
 }
 
-module.exports = dashboardCtr;
+module.exports = addIncoling;
