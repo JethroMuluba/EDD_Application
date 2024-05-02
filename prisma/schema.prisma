@@ -22,7 +22,7 @@ model Utilisateur {
   adresse  String
   telephone  Int @unique
   email String @unique
-  password String @unique
+  password String 
 
   revenuMensuelle RevenuMensuelle[]
   depenses Depenses[]
