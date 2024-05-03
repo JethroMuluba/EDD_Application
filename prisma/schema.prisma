@@ -39,6 +39,7 @@ model RevenuMensuelle {
 
 model Depenses {
   id Int @id @default(autoincrement())
+  categories String 
   montant Int
   date DateTime
   heure DateTime
@@ -46,21 +47,4 @@ model Depenses {
   idUtilisateur Int
   utilisateur Utilisateur @relation(fields: [idUtilisateur], references: [id])
 
-  idCategories Int
-  categories Categories @relation(fields: [idCategories], references: [id])
-}
-
-model Categories {
-  id Int @id @default(autoincrement())
-  dimeEtOffr String
-  nourritures String
-  logements String
-  transports String
-  vetements String
-  educations String
-  dettes String
-  loisirEtAutres String
-  epargne String
-
-  depenses Depenses[]
 }
