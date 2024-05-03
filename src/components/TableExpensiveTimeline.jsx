@@ -35,31 +35,31 @@ function TableExpensiveTimeline() {
                 
                                 <td className='whitespace-nowrap'>
                                     <span className='flex items-center'>
-                                        <img src={data.icone} alt="" />
-                                        {data.category }
+                                        {/* <img src={data.icone} alt="" /> */}
+                                        {data.categories }
                                     </span>
                                 </td>
                                 <td className='whitespace-nowrap'>
                                     FC {data.montant}
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    {data.dates}
+                                    {data.date}
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    {data.heures}
+                                    {data.heure}
                                 </td>
                                 <td>
                                     <span className='flex itmes-center justify-between'>
                                     <button className='active:shadow-md active:rounded-full'>
-                                        <img src={data.editeIcone} alt="" />
+                                        <img src={"https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/x1nwk5qt3dcgzlercluo.svg"} alt="Edite Icone" />
                                     </button>
                 
                                     <button className='active:shadow-md active:rounded-full'>
-                                        <img src={data.limitIcone} alt="" />
+                                        <img src={"https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/nda2ylaauwzirnblonyf.svg"} alt="Limite Icone" />
                                     </button>
                 
                                     <button className='active:shadow-md active:rounded-full'>
-                                        <img src={data.deleteIcone}alt="" />
+                                        <img src={"https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/vl8mzzj3qjjx9bdjnnhn.svg"}alt="Detede Icone" />
                                     </button>
                                     </span>
                                 </td>

@@ -21,27 +21,27 @@ const router = createBrowserRouter([
       },
 
       {
-        path : '/Dépenses',
+        path : '/depenses',
         element : <Dépenses/>
       },
 
       {
-        path : '/Statistiques',
+        path : '/statistiques',
         element : <Statistiques/>
       },
 
       {
-        path : '/Notifications',
+        path : '/notifications',
         element : <Notifications/>
       },
 
       {
-        path : '/Paramètres',
+        path : '/paramètres',
         element : <Paramètres/>
       },
 
       {
-        path : '/Se_deconnecter',
+        path : '/se_deconnecter',
         element : <Login/>
       },
     ]

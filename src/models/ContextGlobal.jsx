@@ -16,9 +16,9 @@ const  ContextGlobalProvider = ({children}) => {
     //Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/tableData')
+        axios.get('http://localhost:3004/dashboard')
         .then(response => {
-            upDateTableExpensiveData(response.data)
+            upDateTableExpensiveData(response.data.expenses);
         })
         .catch (error => {
             console.error('Une erruer est survenue :', error);

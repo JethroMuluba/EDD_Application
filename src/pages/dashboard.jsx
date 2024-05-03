@@ -10,7 +10,7 @@ function Dashboard() {
       <Header headerTitle={`Dashboard`} />
       <main className='flex flex-col justify-items-end gap-[24px] p-[24px] '>
         <Insights/>
-        <section className='flex flex-col items-center gap-[35px] md:flex-row'>
+        <section className='flex flex-col items-start gap-[35px] md:flex-row'>
           <ExpensiveTimeLine/>
           <Graphic/>
         </section>
