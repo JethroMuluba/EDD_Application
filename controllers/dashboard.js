@@ -1,5 +1,26 @@
 const prisma = require('../database/prima');
 
+
+//Get Income and Expenses
+const getIncomeAndExpenses = async (req, res) => {
+    const {utilisateur} = req.body;
+
+    try {
+        const income = await prisma.revenuMensuelle.findMany({
+            where : {idUtilisateur: utilisateur}
+        });
+
+        const expenses = await prisma.depenses.findMany({
+            where : {idUtilisateur: utilisateur}
+        });
+        res.status(200).json({income, expenses});
+    } catch (error) {
+        console.error('Erreur lors de la récupération des revenus et dépenses : ', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des revenus et dépenses' });
+    };
+};
+
+//Add Income and Expenses
 const addIncomeAndExpense = async (req, res) => {
     const { type, utilisateur, montant, categories } = req.body;
 
@@ -38,4 +59,4 @@ const addIncomeAndExpense = async (req, res) => {
     }
 };
 
-module.exports = { addIncomeAndExpense };
+module.exports = { addIncomeAndExpense, getIncomeAndExpenses };
