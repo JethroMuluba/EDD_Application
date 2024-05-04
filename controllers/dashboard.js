@@ -43,9 +43,7 @@ const addIncomeAndExpense = async (req, res) => {
             const createExpense = await prisma.depenses.create({
                 data: {
                     categories: categories,
-                    montant: montant,
-                    date: date,
-                    heure: date,
+                    montant: parseInt(montant),
                     utilisateur: { connect: { id: utilisateur }}
                 }
             });

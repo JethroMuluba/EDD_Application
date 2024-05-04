@@ -31,7 +31,7 @@ model Utilisateur {
 model RevenuMensuelle {
   id Int @id @default(autoincrement())
   montant Int
-  date DateTime
+  date DateTime @default(now())
 
   idUtilisateur Int
   utilisateur Utilisateur @relation(fields: [idUtilisateur], references: [id])
@@ -41,8 +41,8 @@ model Depenses {
   id Int @id @default(autoincrement())
   categories String 
   montant Int
-  date DateTime
-  heure DateTime
+  date DateTime @default(now())
+  heure DateTime @default(now())
 
   idUtilisateur Int
   utilisateur Utilisateur @relation(fields: [idUtilisateur], references: [id])

@@ -1,5 +1,6 @@
 const express =  require('express');
 const app = express();
+const cors = require('cors')
 
 const dashboardRoute = require('./routes/dashboard');
 const userRegister = require('./routes/register');
@@ -9,6 +10,7 @@ const userRegister = require('./routes/register');
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT;
 
+app.use(cors());
 app.use(express.json());
 
 //Set register Route
