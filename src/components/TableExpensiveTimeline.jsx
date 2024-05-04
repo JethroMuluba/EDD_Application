@@ -43,10 +43,10 @@ function TableExpensiveTimeline() {
                                     FC {data.montant}
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    {data.date}
+                                    {new Date(data.date).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-')}
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    {data.heure}
+                                    {new Date(data.heure).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
                                 </td>
                                 <td>
                                     <span className='flex itmes-center justify-between'>

@@ -73,10 +73,14 @@ function HeaderActions() {
 
         // Add New Incoming
         const {addIncoming, upDateIncoming, addExpensive} = useContextGlobal();
+        // console.log("Dépenses",getTableExpensiveData);
+
         const onSubmitIncoming = (data) => {
             const id = '1'; 
             const addNewIncoming = {
+                type : "revenu",
                 amount: data.amount,
+                date : new Date(),
             }
 
             setShowMessage(true); 
@@ -120,18 +124,16 @@ function HeaderActions() {
         month: '2-digit',
         year: 'numeric'
     };
-
-    const id = uuidv4();
+    // date: date.toLocaleDateString('en-US', options).replace(/\//g, '-'),
+    // heure: new Date().getHours() + ":" + new Date().getMinutes()
+    // const id = uuidv4();
+    // const id = getTableExpensiveData.length + 1;
 
         const addNewExpensive = {
-            id: id,
-            category: data.selectCategory,
-            montant: data.amountExp,
-            dates: date.toLocaleDateString('en-US', options).replace(/\//g, '-'),
-            heures: new Date().getHours() + ":" + new Date().getMinutes(),
-            editeIcone: "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/x1nwk5qt3dcgzlercluo.svg",
-            limitIcone : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/nda2ylaauwzirnblonyf.svg",
-            deleteIcone : "https://res.cloudinary.com/dr8ofciki/image/upload/v1713555965/EDD_App/vl8mzzj3qjjx9bdjnnhn.svg",
+            type : "depense",
+            categories: data.selectCategory,
+            montant: parseInt(data.amountExp),
+            utilisateur : 1
         };
 
         setShowFormExpensive(false);
