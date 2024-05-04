@@ -5,7 +5,8 @@ import { useContextGlobal } from '../models/ContextGlobal';
 
 function Insights() {
     const {getInsightData} = useContextGlobal();
-    const insightDataIncome = getInsightData[8].montant;
+    const insightDataIncome = getInsightData.montant;
+
     console.log(insightDataIncome);
   return (
     
