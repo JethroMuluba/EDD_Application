@@ -5,7 +5,8 @@ import { useContextGlobal } from '../models/ContextGlobal';
 
 function Insights() {
     const {getInsightData} = useContextGlobal();
-    const insightData = getInsightData;
+    const insightDataIncome = getInsightData[8].montant;
+    console.log(insightDataIncome);
   return (
     
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10  '>
@@ -44,7 +45,7 @@ function Insights() {
 
             <div className='flex flex-col '>
                 <h2  className='text-[26px] text-[#222834] '>
-                    FC {data.insights[0].amount}
+                    FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
                 </h2>
 
                 <h3 className='text-base font-medium text-[#B2B3B5]'>

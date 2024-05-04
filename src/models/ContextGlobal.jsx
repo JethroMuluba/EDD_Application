@@ -5,94 +5,95 @@ import axios from "axios";
 const ContextGlobal = createContext();
 
 export const useContextGlobal = () => {
-  return useContext(ContextGlobal);
+    return useContext(ContextGlobal);
 };
 
 const ContextGlobalProvider = ({ children }) => {
   //Get Expensive Table Data
-  const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
- 
-  useEffect(() => {
+    const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
+
+    useEffect(() => {
     axios
-      .get("http://localhost:3004/dashboard")
-      .then((response) => {
+        .get("http://localhost:3004/dashboard")
+        .then((response) => {
         upDateTableExpensiveData(response.data.expenses);
         // console.log(response.data.expenses);
-      })
-      .catch((error) => {
+        })
+        .catch((error) => {
         console.error("Une erruer est survenue :", error);
-      });
-  }, []);
+        });
+    }, []);
 
-  if (getTableExpensiveData === null) {
+    if (getTableExpensiveData === null) {
     return "Chargement en cours...";
-  }
+    }
 
   //Post Expensive
-  const addExpensive = async (newExpensive) => {
+    const addExpensive = async (newExpensive) => {
     await axios
-      .post("http://localhost:3004/dashboard", newExpensive)
-      .then((response) => {
-       
+        .post("http://localhost:3004/dashboard", newExpensive)
+        .then((response) => {
+
         return upDateTableExpensiveData([
-          response.data.createExpense,
-          ...getTableExpensiveData,
+            response.data.createExpense,
+            ...getTableExpensiveData,
         ]);
-      });
-  };
+        });
+    };
 
   //Get Insight Data
-  const [getInsightData, upDateInsightData] = useState([]);
+    const [getInsightData, upDateInsightData] = useState([]);
+    // console.log(getInsightData);
 
-  useEffect(() => {
+    useEffect(() => {
     axios
-      .get("http://localhost:3000/insights")
-      .then((response) => {
-        upDateInsightData(response.data);
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
-  }, []);
+        .get("http://localhost:3004/dashboard")
+        .then((response) => {
+        upDateInsightData(response.data.income);
+        })
+        .catch((error) => {
+      // console.log(error);
+        });
+    }, []);
 
-  if (getInsightData === null) {
+    if (getInsightData === null) {
     return "Chargement en cours...";
-  }
+    }
 
   //Post Incoming
-  const addIncoming = (newIncoming) => {
+    const addIncoming = (newIncoming) => {
     axios
-      .post("http://localhost:3000/insights", newIncoming)
-      .then((response) =>
+        .post("http://localhost:3000/insights", newIncoming)
+        .then((response) =>
         upDateInsightData([response.data, ...getInsightData])
-      );
-  };
+        );
+    };
 
   //Put Incoming
-  const upDateIncoming = (id, incomingToUpdate) => {
+    const upDateIncoming = (id, incomingToUpdate) => {
     axios
-      .put(`http://localhost:3000/insights/${id}`, incomingToUpdate)
-      .then((res) => {
+        .put(`http://localhost:3000/insights/${id}`, incomingToUpdate)
+        .then((res) => {
         if (res.status === 200) {
-          upDateInsightData((prevData) => {
+            upDateInsightData((prevData) => {
             return prevData.map((income) => {
-              if (income.id === id) {
+                if (income.id === id) {
                 return { ...income, ...incomingToUpdate };
-              } else {
+                } else {
                 return income;
-              }
+                }
             });
-          });
+            });
         }
-      })
-      .catch((error) => {
+        })
+        .catch((error) => {
         console.error("Error updating incoming:", error);
-      });
-  };
+        });
+    };
 
-  return (
+    return (
     <ContextGlobal.Provider
-      value={{
+        value={{
         getTableExpensiveData,
         upDateTableExpensiveData,
         getInsightData,
@@ -100,10 +101,10 @@ const ContextGlobalProvider = ({ children }) => {
         addIncoming,
         upDateIncoming,
         addExpensive,
-      }}
+        }}
     >
-      {children}
+        {children}
     </ContextGlobal.Provider>
-  );
+    );
 };
 export default ContextGlobalProvider;
