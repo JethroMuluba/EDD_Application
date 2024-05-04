@@ -7,7 +7,7 @@ function Insights() {
     const {getInsightData} = useContextGlobal();
     const insightDataIncome = getInsightData.montant;
 
-    console.log(insightDataIncome);
+    // console.log(insightDataIncome);
   return (
     
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10  '>
@@ -45,9 +45,11 @@ function Insights() {
             </span>
 
             <div className='flex flex-col '>
-                <h2  className='text-[26px] text-[#222834] '>
-                    FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
-                </h2>
+                {insightDataIncome && (
+                    <h2 className='text-[26px] text-[#222834] '>
+                        FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
+                    </h2>
+                )}
 
                 <h3 className='text-base font-medium text-[#B2B3B5]'>
                     {data.insights[0].title}
