@@ -40,7 +40,7 @@ function TableExpensiveTimeline() {
                                     </span>
                                 </td>
                                 <td className='whitespace-nowrap'>
-                                    FC {data.montant}
+                                    FC {data.montant.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
                                 </td>
                                 <td className='whitespace-nowrap'>
                                     {new Date(data.date).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-')}
