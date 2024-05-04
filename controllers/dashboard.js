@@ -6,7 +6,8 @@ const getIncomeAndExpenses = async (req, res) => {
     const {utilisateur} = req.body;
 
     try {
-        const income = await prisma.revenuMensuelle.findMany({
+        const income = await prisma.revenuMensuelle.findFirst({
+            orderBy : {date : 'desc'},
             where : {idUtilisateur: utilisateur}
         });
 
@@ -28,8 +29,7 @@ const addIncomeAndExpense = async (req, res) => {
         try {
             const createIncome = await prisma.revenuMensuelle.create({
                 data: {
-                    montant: montant,
-                    date: new Date(),
+                    montant: parseInt(montant),
                     utilisateur: { connect: { id: utilisateur }}
                 }
             });
