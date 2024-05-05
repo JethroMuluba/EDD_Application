@@ -115,7 +115,7 @@ function Insights() {
                     <img src={data.insights[2].border} alt="" />
                 </span>
         </div>
-
+ 
 
     </div>
   )

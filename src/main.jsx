@@ -11,12 +11,18 @@ import Paramètres from './pages/paramètres.jsx'
 import Login from './pages/login.jsx'
 
 const router = createBrowserRouter([
+  
+  {
+    path : '/',
+    element : <Login/>
+  },
+  
   {
     path : '/',
     element : <App/>,
     children : [
       {
-        path : '/',
+        path : '/dashboard',
         element : <Dashboard/>
       },
 
@@ -45,12 +51,8 @@ const router = createBrowserRouter([
         element : <Login/>
       },
     ]
-  },
-
-  {
-    path : '/login',
-    element : <Login/>
   }
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
