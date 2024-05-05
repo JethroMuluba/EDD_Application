@@ -28,7 +28,7 @@ function Sidebar() {
             </li>
           </Link>
 
-          <Link to={'/Dépenses'} className='text-white'>
+          <Link to={'/depenses'} className='text-white'>
             <li className='flex items-center  gap-[20px]  py-[10px] px-[27px] hover:bg-cyan-900 hover:text-[#F4CA8D] '>
               <span>
                 <img src={data.icones[1].icone} alt="" />

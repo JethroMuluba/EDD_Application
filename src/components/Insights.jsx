@@ -45,11 +45,11 @@ function Insights() {
             </span>
 
             <div className='flex flex-col '>
-                {insightDataIncome && (
+                {insightDataIncome ? (
                     <h2 className='text-[26px] text-[#222834] '>
                         FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
                     </h2>
-                )}
+                ) : ('Pas de revenu')}
 
                 <h3 className='text-base font-medium text-[#B2B3B5]'>
                     {data.insights[0].title}
