@@ -7,25 +7,33 @@ function Insights() {
     const {getInsightData, getTableExpensiveData} = useContextGlobal();
     const insightDataIncome = getInsightData.montant;
 
-    //Calculate all the expenses of the day and display only the total of these expenses
-    const [dailyExpenses, setDailyExpenses] = useState([]);
+    //Calculate all the expenses of the day and display only the total of these expenses as well as the rest of Income
     const [totalDailyExpenses, setTotalDailyExpenses] = useState();
+    const [totalExpenses, setTotalExpenses] = useState();
+
+    //Calculate the Rest of Income
+        const incomeRest = insightDataIncome - totalExpenses;
+
     
     useEffect(() => {
         const currentDate = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-');
-        // console.log("Current Date:", currentDate);
     
         const filteredExpenses = getTableExpensiveData.filter(expense => {
             const expenseDate = new Date(expense.date).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-');
             return expenseDate === currentDate;
         });
-        // console.log("Filtered Expenses:", filteredExpenses);
     
         const totalExpenses = filteredExpenses.reduce((total, expense) => total + expense.montant, 0);
-        // console.log("Total Expenses:", totalExpenses);
+
+        //Get All Expenses
+        const expenses = getTableExpensiveData;
+
+        //Calculate All Expenses
+        const totalExpense = expenses.reduce((total, expense) => total + expense.montant, 0);
     
-        setDailyExpenses(filteredExpenses);
         setTotalDailyExpenses(totalExpenses);
+        setTotalExpenses(totalExpense);
+        
     }, [getTableExpensiveData]);
     return (
     
@@ -65,9 +73,12 @@ function Insights() {
             </span>
 
             <div className='flex flex-col '>
-                <h2  className='text-[26px] text-[#222834] '>
-                    FC {totalDailyExpenses.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
-                </h2>
+                {totalDailyExpenses ? (
+                    <h2  className='text-[26px] text-[#222834] '>
+                        FC {totalDailyExpenses.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
+                    </h2>
+                    ) : ('Pas de Dépense')};
+
 
                 <h3 className='text-base font-medium text-[#B2B3B5]'>
                     {data.insights[1].title}
@@ -90,9 +101,11 @@ function Insights() {
             </span>
 
             <div className='flex flex-col mr-[25px] '>
-                <h2  className='text-[26px] text-[#222834] '>
-                    FC {data.insights[2].amount}
-                </h2>
+            {incomeRest ? (
+                    <h2  className='text-[26px] text-[#222834] '>
+                        FC {incomeRest.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
+                    </h2>
+                    ) : ('Pas de Dépense')};
 
                 <h3 className='text-base font-medium text-[#B2B3B5]'>
                     {data.insights[2].title}
