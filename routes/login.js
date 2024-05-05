@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const loginRouter = express.Router();
 const prisma = require('../database/prima');
+require('dotenv').config();
 
 
 loginRouter.post('/', async (req, res, next) => {
@@ -21,7 +22,7 @@ loginRouter.post('/', async (req, res, next) => {
                 return next(err);
             };
 
-            const token = jwt.sign({ id: user.id }, jwtSecret);
+            const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
 
             return res.json({token});
         }); 

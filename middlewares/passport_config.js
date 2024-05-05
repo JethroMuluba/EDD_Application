@@ -7,7 +7,9 @@ const prisma = require('../database/prima');
 
 passport.use(new LocalStrategy({usernameField : 'email'}, async (email, password, done) => {
     try {
-        const utilisateur = await prisma.utilisateur.findUnique({email});
+        const utilisateur = await prisma.utilisateur.findUnique({
+            where: { email: email },
+        });
 
         if(!utilisateur) {
             return done(null, false, {message : 'Email incorrect'});
