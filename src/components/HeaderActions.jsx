@@ -72,22 +72,23 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
-        const {addIncoming, upDateIncoming, addExpensive} = useContextGlobal();
-        // console.log("Dépenses",getTableExpensiveData);
-
+        const {addIncoming, addExpensive} = useContextGlobal();
+        
         const onSubmitIncoming = (data) => {
-            const id = '1'; 
             const addNewIncoming = {
                 type : "revenu",
-                amount: data.amount,
-                date : new Date(),
+                montant: parseInt(data.amount),
+                utilisateur : 1,
             }
 
             setShowMessage(true); 
-            setTimeout(() => setShowMessage(false), 3000); 
+            setTimeout(() => setShowMessage(false), 5000); 
             reset();
             setShowFormIncoming(false);
-            upDateIncoming(id, addNewIncoming);
+            addIncoming(addNewIncoming);
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         }
 
 
@@ -177,7 +178,7 @@ function HeaderActions() {
 
                     {showMessage && (
                         <div className="absolute top-[12px] right-[500px] bg-[#34B77B] text-white px-4 py-2 rounded">
-                            Revenu enregistré avec succès
+                            Revenu enregistré avec succès.
                         </div>
                     )}
 

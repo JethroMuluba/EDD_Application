@@ -33,11 +33,10 @@ const ContextGlobalProvider = ({ children }) => {
     await axios
         .post("http://localhost:3004/dashboard", newExpensive)
         .then((response) => {
-
-        return upDateTableExpensiveData([
-            response.data.createExpense,
-            ...getTableExpensiveData,
-        ]);
+            return upDateTableExpensiveData([
+                response.data.createExpense,
+                ...getTableExpensiveData,
+            ]);
         });
     };
 
@@ -57,17 +56,21 @@ const ContextGlobalProvider = ({ children }) => {
     }, []);
 
     if (getInsightData === null) {
-    return "Chargement en cours...";
+    return "Chargement en cours... c'est vrai ça";
     }
 
   //Post Incoming
-    const addIncoming = (newIncoming) => {
-    axios
-        .post("http://localhost:3000/insights", newIncoming)
-        .then((response) =>
-        upDateInsightData([response.data, ...getInsightData])
-        );
-    };
+    const addIncoming = async (newIncoming) => {
+        await axios
+            .post("http://localhost:3004/dashboard", newIncoming)
+            .then((response) => {
+                return upDateInsightData([
+                    response.data.createIncome, 
+                    ...upDateInsightData,
+                ])}
+            ); 
+    }
+    // console.log('message : ', getInsightData);
 
   //Put Incoming
     const upDateIncoming = (id, incomingToUpdate) => {
