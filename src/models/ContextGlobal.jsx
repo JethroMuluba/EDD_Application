@@ -21,6 +21,21 @@ const checkLoginData = async (checkData) => {
             console.error("Erreur lors de la connexion :", error.response.data);
         }
 };
+
+//Get User Id From JWT
+    // const getUserIdFromToken = () => {
+    //     const token = localStorage.getItem('token');
+    //         if (!token) {
+    //             return null;
+    //         };
+        
+    //     const decodedToken = jwt.decode(token)
+    //         if (!decodedToken || Date.now() >= decodedToken.exp * 1000) {
+    //             return null;
+    //         };
+    //         return decodedToken.id;
+    // }
+    // console.log(getUserIdFromToken);
 //Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
 
@@ -116,7 +131,7 @@ const checkLoginData = async (checkData) => {
         addIncoming,
         upDateIncoming,
         addExpensive,
-        checkLoginData
+        checkLoginData,
         }}
     >
         {children}

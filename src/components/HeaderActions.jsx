@@ -72,13 +72,14 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
-        const {addIncoming, addExpensive} = useContextGlobal();
+        const {addIncoming, addExpensive, getUserIdFromToken} = useContextGlobal();
         
         const onSubmitIncoming = (data) => {
+            const userId = getUserIdFromToken();
             const addNewIncoming = {
                 type : "revenu",
                 montant: parseInt(data.amount),
-                utilisateur : 1,
+                utilisateur : userId,
             }
 
             setShowMessage(true); 
