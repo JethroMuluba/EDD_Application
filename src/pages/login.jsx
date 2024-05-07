@@ -2,14 +2,14 @@ import React from 'react';
 import data from '../data/data.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import ContextGlobalProvider, { useContextGlobal } from '../models/ContextGlobal';
+import { useContextGlobal } from '../models/ContextGlobal';
+
 
 const Login = () => {
 
-
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  // const {checkLoginData} = useContextGlobal();
+  const {checkLoginData} = useContextGlobal();
 
   const onSubmitLoginData = (data) => {
     const checkUser = {

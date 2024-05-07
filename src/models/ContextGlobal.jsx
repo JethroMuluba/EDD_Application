@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import data from "../data/data.json";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ContextGlobal = createContext();
 
@@ -10,10 +10,13 @@ export const useContextGlobal = () => {
 
 const ContextGlobalProvider = ({ children }) => {
 //Post Login Data
+const navigate = useNavigate();
+
 const checkLoginData = async (checkData) => {
         try {
             const response = await axios.post("http://localhost:3004/login", checkData);
                 console.log("Utilisateur connecté avec succès", response.data);
+                navigate('/dashboard')
         } catch (error) {
             console.error("Erreur lors de la connexion :", error.response.data);
         }
