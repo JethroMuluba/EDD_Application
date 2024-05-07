@@ -10,6 +10,7 @@ import Notifications from './pages/notifications.jsx'
 import Paramètres from './pages/paramètres.jsx'
 import Login from './pages/login.jsx'
 import Auth from '../Auth.jsx'
+import Register from './pages/register.jsx'
 
 const router = createBrowserRouter([
   
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path : '/',
         element : <Login/>,
+      },
+      {
+        path : '/register',
+        element : <Register/>,
       }
     ]
   },
