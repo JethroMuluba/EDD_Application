@@ -9,7 +9,16 @@ export const useContextGlobal = () => {
 };
 
 const ContextGlobalProvider = ({ children }) => {
-  //Get Expensive Table Data
+//Post Login Data
+const checkLoginData = async (checkData) => {
+        try {
+            const response = await axios.post("http://localhost:3004/login", checkData);
+                console.log("Utilisateur connecté avec succès", response.data);
+        } catch (error) {
+            console.error("Erreur lors de la connexion :", error.response.data);
+        }
+};
+//Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
 
     useEffect(() => {
@@ -104,6 +113,7 @@ const ContextGlobalProvider = ({ children }) => {
         addIncoming,
         upDateIncoming,
         addExpensive,
+        checkLoginData
         }}
     >
         {children}
