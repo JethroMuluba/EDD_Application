@@ -117,7 +117,7 @@ function HeaderActions() {
 
     // Add New Expensive
     const onSubmitNewExpensive = (data) => {
-    
+    const getUserId = decodedToken.id;
     const date = new Date();
 
     const options = {
@@ -134,7 +134,7 @@ function HeaderActions() {
             type : "depense",
             categories: data.selectCategory,
             montant: parseInt(data.amountExp),
-            utilisateur : 1
+            utilisateur : getUserId,
         };
 
         setShowFormExpensive(false);
