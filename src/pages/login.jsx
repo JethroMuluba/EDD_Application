@@ -2,15 +2,14 @@ import React from 'react';
 import data from '../data/data.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { useContextGlobal } from '../models/ContextGlobal';
-
+import ContextGlobalProvider, { useContextGlobal } from '../models/ContextGlobal';
 
 const Login = () => {
 
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const {checkLoginData} = useContextGlobal();
+  // const {checkLoginData} = useContextGlobal();
 
   const onSubmitLoginData = (data) => {
     const checkUser = {
@@ -22,7 +21,9 @@ const Login = () => {
     reset();
   };
 
+  
   return (
+
 <div className='w-full bg-white '>
   <div className='w-2/4 flex absolute transform translate-y-[17px]  rounded-[10px] shadow-md shadow-black transition-shadow duration-150 ease-in-out text-[12px] text-[#222834] '>
     <img className=' w-1/2 bg-white rounded-l-[10px]' src={data.icones[9].illustration1} alt="Illustration Personal Finance" />

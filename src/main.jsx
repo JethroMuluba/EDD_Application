@@ -9,17 +9,25 @@ import Statistiques from './pages/statistiques.jsx'
 import Notifications from './pages/notifications.jsx'
 import Paramètres from './pages/paramètres.jsx'
 import Login from './pages/login.jsx'
+import Auth from '../Auth.jsx'
 
 const router = createBrowserRouter([
   
   {
     path : '/',
-    element : <App/>,
+    element : <Auth/>,
     children : [
       {
         path : '/',
-        element : <Login/>
-      },
+        element : <Login/>,
+      }
+    ]
+  },
+  
+  {
+    path : '/',
+    element : <App/>,
+    children : [
       {
         path : '/dashboard',
         element : <Dashboard/>
