@@ -15,7 +15,6 @@ const passport = require('passport');
 //Import Dotenv
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT;
-const jwtSecret = process.env.JWT_SECRET;
 
 
 app.use(cors());
