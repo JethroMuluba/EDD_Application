@@ -10,6 +10,18 @@ export const useContextGlobal = () => {
 };
 
 const ContextGlobalProvider = ({ children }) => {
+
+// Create New User
+const createNewUser = async (newUser) => {
+    try {
+        const response = await axios.post("http://localhost:3004/register", newUser )
+        console.log("Utilisateur enregistré avec succès", response.data);
+        navigate('/dashboard')
+    } catch (error) {
+        console.error("Erreur lors de l'inscruption :", error.response.data);
+    }
+}
+
 //Post Login Data
 const navigate = useNavigate();
 
@@ -133,6 +145,7 @@ const checkLoginData = async (checkData) => {
         upDateIncoming,
         addExpensive,
         checkLoginData,
+        createNewUser,
         }}
     >
         {children}

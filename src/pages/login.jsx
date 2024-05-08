@@ -36,7 +36,7 @@ const Login = () => {
         <div className='flex flex-col justify-between gap-[20px] '>
           <div className='flex flex-col gap-[5px] items-start'>
             <label htmlFor="" className='block text-white text-base'>Email</label>
-            <input {...register("email", {required:true, minLength: 5, maxLength:25})} placeholder='Entrez votre email ici' name='email'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#fff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px]  outline-none appearance-none caret-[#fff] ' type="email" />
+            <input {...register("email", {required:true, minLength: 5, maxLength:60})} placeholder='Entrez votre email ici' name='email'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#fff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px]  outline-none appearance-none caret-[#fff] ' type="email" />
             {errors.email && <span style={{color: '#DA5643', fontSize: '12px'}}>L'email est obligatoir</span>}
           </div>
 

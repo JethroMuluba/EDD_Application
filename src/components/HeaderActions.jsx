@@ -72,14 +72,13 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
-        const {addIncoming, addExpensive, getUserIdFromToken} = useContextGlobal();
+        const {addIncoming, addExpensive } = useContextGlobal();
         
         const onSubmitIncoming = (data) => {
-            const userId = getUserIdFromToken();
             const addNewIncoming = {
                 type : "revenu",
                 montant: parseInt(data.amount),
-                utilisateur : userId,
+                utilisateur : 1,
             }
 
             setShowMessage(true); 
@@ -118,7 +117,6 @@ function HeaderActions() {
 
     // Add New Expensive
     const onSubmitNewExpensive = (data) => {
-    const getUserId = decodedToken.id;
     const date = new Date();
 
     const options = {
@@ -135,7 +133,7 @@ function HeaderActions() {
             type : "depense",
             categories: data.selectCategory,
             montant: parseInt(data.amountExp),
-            utilisateur : getUserId,
+            utilisateur : 1,
         };
 
         setShowFormExpensive(false);
