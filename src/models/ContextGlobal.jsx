@@ -52,12 +52,11 @@ const checkLoginData = async (checkData) => {
 //Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
 
-    useEffect(() => {
-    axios
+    useEffect( async () => {
+    await axios
         .get("https://edd-application.onrender.com/dashboard")
         .then((response) => {
         upDateTableExpensiveData(response.data.expenses);
-        // console.log(response.data.expenses);
         })
         .catch((error) => {
         console.error("Une erruer est survenue :", error);
@@ -82,16 +81,15 @@ const checkLoginData = async (checkData) => {
 
   //Get Insight Data
     const [getInsightData, upDateInsightData] = useState([]);
-    // console.log(getInsightData);
 
-    useEffect(() => {
-    axios
+
+    useEffect( async () => {
+    await axios
         .get("https://edd-application.onrender.com/dashboard")
         .then((response) => {
         upDateInsightData(response.data.income);
         })
         .catch((error) => {
-      // console.log(error);
         });
     }, []);
 
@@ -110,11 +108,10 @@ const checkLoginData = async (checkData) => {
                 ])}
             ); 
     }
-    // console.log('message : ', getInsightData);
 
   //Put Incoming
-    const upDateIncoming = (id, incomingToUpdate) => {
-    axios
+    const upDateIncoming = async (id, incomingToUpdate) => {
+    await axios
         .put(`https://edd-application.onrender.com/insights/${id}`, incomingToUpdate)
         .then((res) => {
         if (res.status === 200) {

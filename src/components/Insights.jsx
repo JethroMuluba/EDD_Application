@@ -69,7 +69,7 @@ function Insights() {
         <div className='flex justify-between items-center gap-[20px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[14px]'>
-                <img className='pt-[2px] '  src={data.insights[1].icone} alt="Clock Icone" />
+                <img className=' '  src={data.insights[1].icone} alt="Clock Icone" />
             </span>
 
             <div className='flex flex-col text-[#222834] font-medium text-[18px] '>
@@ -97,7 +97,7 @@ function Insights() {
         <div className='flex justify-between items-center gap-[25px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
-                <img className='pt-[px] '  src={data.insights[2].icone} alt="Calandar Icone" />
+                <img className=''  src={data.insights[2].icone} alt="Calandar Icone" />
             </span>
 
             <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px] '>
