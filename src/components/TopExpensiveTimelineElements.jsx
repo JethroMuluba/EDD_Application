@@ -4,13 +4,13 @@ import data from '../data/data.json'
 
 function TopExpensiveTimelineElements() {
   return (
-    <div className='flex flex-col md:flex-row justify-between items-center gap-4 md:gap-12'>
-        <div className='flex items-center gap-[12px] '>
+    <div className='flex flex-col md:flex-row android:flex android:flex-row justify-between items-center gap-4 md:gap-12'>
+        <div className='flex  items-center gap-[12px] '>
             <h3 className='text-base font-medium text-[#222834]'>
                 {data.expensiveData[0].title}
             </h3>
 
-            <div className='flex gap-[6px]'>
+            {/* <div className='flex gap-[6px]'>
                 <button className='flex items-center gap-[5px] text-[#222834] border rounded-[5px] px-[8px] py-[2px] active:shadow-md'>
                     {data.expensiveData[0].previewDate}
                     <span>
@@ -25,7 +25,7 @@ function TopExpensiveTimelineElements() {
                     </span>
                 </button>
                 
-            </div>
+            </div> */}
         </div>
         <div  className='flex items-center gap-[12px] '>
             <h3 className='text-base font-medium text-[#222834]'>
