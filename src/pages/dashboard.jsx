@@ -6,7 +6,7 @@ import Graphic from '../components/graphic';
 
 function Dashboard() {
   return (
-    <section className='bg-white w-4/5'>
+    <section className='bg-white lg:w-4/5 android:w-full'>
       <Header headerTitle={`Dashboard`} />
       <main className='flex flex-col justify-items-end gap-[24px] p-[24px] '>
         <Insights/>

@@ -39,13 +39,13 @@ function Insights() {
     
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10  '>
 
-        <div className='flex justify-between items-center gap-[20px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[25px]  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className=' rounded-full px-[15px] py-[14px]'>
-                <img className='pt-[2px] '  src={data.insights[0].icone} alt="Clock Icone" />
+            <span className=' rounded-full px-[15px] py-[17px]'>
+                <img className=''  src={data.insights[0].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col text-[#222834] font-medium text-[18px]'>
+            <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px]'>
                 {insightDataIncome ? (
                     <h2 className='text-[26px] text-[#222834] '>
                         FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -57,22 +57,22 @@ function Insights() {
                 </h3>
             </div>
 
-            <button  className='m-auto active:shadow-md active:rounded-full '>
+            {/* <button  className='m-auto active:shadow-md active:rounded-full '>
                 <img src={data.insights[0].moreIcone} alt="" />
-            </button>
+            </button> */}
 
             <span>
                 <img src={data.insights[0].border} alt="" />
             </span>
         </div>
 
-        <div className='flex justify-between items-center gap-[20px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[25px]  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
-            <span className='rounded-full px-[15px] py-[14px]'>
+            <span className='rounded-full px-[15px] py-[17px]'>
                 <img className=' '  src={data.insights[1].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col text-[#222834] font-medium text-[18px] '>
+            <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px] '>
                 {totalDailyExpenses ? (
                     <h2  className='text-[26px] text-[#222834] '>
                         FC {totalDailyExpenses.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -85,16 +85,16 @@ function Insights() {
                 </h3>
             </div>
 
-            <button  className='m-auto active:shadow-md active:rounded-full '>
+            {/* <button  className='m-auto active:shadow-md active:rounded-full '>
                 <img src={data.insights[1].moreIcone} alt="" />
-            </button>
+            </button> */}
 
             <span>
                 <img src={data.insights[1].border} alt="" />
             </span>
         </div>
 
-        <div className='flex justify-between items-center gap-[25px]  pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center gap-[25px]  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
                 <img className=''  src={data.insights[2].icone} alt="Calandar Icone" />
