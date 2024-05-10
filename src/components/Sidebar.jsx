@@ -9,7 +9,7 @@ function Sidebar() {
       navigate(path);
     }
   return (
-    <div className='w-1/5 flex flex-col gap-[260px] py-[24px] bg-cyan-950 '>
+    <div className='w-1/5 android:hidden flex flex-col gap-[260px] py-[24px] bg-cyan-950 '>
       <nav className='flex flex-col  gap-[30px] '>
 
         <Link to={'/dashboard'}>
