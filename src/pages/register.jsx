@@ -28,11 +28,11 @@ const Register = () => {
   
   return (
 
-<div className='android:w-full flex justify-center items-center h-screen bg-gray-100'>
-  <div className='w-2/4  flex absolute  rounded-[10px] shadow-md shadow-gray-400 '>
-    <img className=' w-1/2 bg-white rounded-l-[10px]' src={data.icones[9].illustration2} alt="Illustration Personal Finance" />
+<div className='android:w-full flex justify-center items-center h-screen lg:bg-gray-100 android:bg-[#093648]'>
+  <div className='lg:w-2/4 android:w-full  lg:flex lg:flex-row android:flex-col absolute  lg:rounded-[10px] android:rounded-none lg:shadow-md android:shadow-none lg:shadow-gray-400'>
+    <img className='  lg:w-1/2 android:w-full lg:bg-white lg:rounded-l-[10px]' src={data.icones[9].illustration2} alt="Illustration Personal Finance" />
 {/* Login Form */}
-    <div className='bg-[#093648] w-1/2 flex flex-col gap-[20px] rounded-r-[10px]  py-[20px] px-[20px]'>
+    <div className='bg-[#093648] w-1/2 android:w-full flex flex-col gap-[20px] lg:rounded-r-[10px] android:rounded-none  py-[20px] px-[20px]'>
 
       <h3 className=' text-white text-lg font-medium text-center'>Inscription</h3>
 
@@ -77,7 +77,7 @@ const Register = () => {
 
           <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   focus:outline-[#fff] focus:outline active:outline-none '>
             <span className="hidden lg:inline">S'inscrire</span>
-            <span className="lg:hidden  "><img className='w-[30px] pl-4 ' src={data.icones[9].arrowRight} alt="" /></span>
+            <span className="lg:hidden  ">S'inscrire</span>
           </button>
         </div>
 
@@ -87,7 +87,7 @@ const Register = () => {
 
             <p className='text-white text-sm'>Ou inscrivez-vous avec </p>
 
-            <div className='flex gap-[16px] '>
+            <div className='flex gap-[16px] android:justify-between '>
               <img src={data.icones[9].line} alt="" />
               <Link >
                 <img src={data.icones[9].googleIcone} alt="Google Icone" />
