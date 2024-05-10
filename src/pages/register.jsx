@@ -28,7 +28,7 @@ const Register = () => {
   
   return (
 
-<div className='flex justify-center items-center h-screen bg-gray-100'>
+<div className='android:w-full flex justify-center items-center h-screen bg-gray-100'>
   <div className='w-2/4  flex absolute  rounded-[10px] shadow-md shadow-gray-400 '>
     <img className=' w-1/2 bg-white rounded-l-[10px]' src={data.icones[9].illustration2} alt="Illustration Personal Finance" />
 {/* Login Form */}

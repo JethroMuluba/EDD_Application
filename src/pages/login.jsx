@@ -25,10 +25,10 @@ const Login = () => {
   return (
 
 <div className=' android:w-full flex justify-center items-center h-screen bg-gray-100'>
-  <div className='w-2/4 android:w-full  flex android:flex-col absolute  rounded-[10px] android:rounded-none shadow-md android:shadow-none shadow-gray-400 '>
-    <img className=' w-1/2 android:w-full  bg-white rounded-l-[10px]' src={data.icones[9].illustration1} alt="Illustration Personal Finance" />
+  <div className='lg:w-2/4 android:w-full  lg:flex lg:flex-row android:flex-col absolute  lg:rounded-[10px] android:rounded-none lg:shadow-md android:shadow-none lg:shadow-gray-400 '>
+    <img className=' lg:w-1/2 android:w-full  bg-white rounded-l-[10px]' src={data.icones[9].illustration1} alt="Illustration Personal Finance" />
 {/* Login Form */}
-    <div className='bg-[#093648] w-1/2 android:w-full flex flex-col gap-[20px] rounded-r-[10px] android:rounded-none  py-[20px] px-[20px]'>
+    <div className='bg-[#093648] w-1/2 android:w-full flex flex-col gap-[20px] lg:rounded-r-[10px] android:rounded-none  py-[20px] px-[20px]'>
 
       <h3 className=' text-white text-lg font-medium text-center'>Connexion</h3>
 
