@@ -78,7 +78,7 @@ function HeaderActions() {
             const addNewIncoming = {
                 type : "revenu",
                 montant: parseInt(data.amount),
-                utilisateur : 1,
+                utilisateur : 2,
             }
 
             setShowMessage(true); 
@@ -133,7 +133,7 @@ function HeaderActions() {
             type : "depense",
             categories: data.selectCategory,
             montant: parseInt(data.amountExp),
-            utilisateur : 1,
+            utilisateur : 2,
         };
 
         setShowFormExpensive(false);

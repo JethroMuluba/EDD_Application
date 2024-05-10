@@ -52,8 +52,8 @@ const checkLoginData = async (checkData) => {
 //Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
 
-    useEffect( async () => {
-    await axios
+    useEffect(() => {
+     axios
         .get("https://edd-application.onrender.com/dashboard")
         .then((response) => {
         upDateTableExpensiveData(response.data.expenses);
@@ -83,8 +83,8 @@ const checkLoginData = async (checkData) => {
     const [getInsightData, upDateInsightData] = useState([]);
 
 
-    useEffect( async () => {
-    await axios
+    useEffect( () => {
+    axios
         .get("https://edd-application.onrender.com/dashboard")
         .then((response) => {
         upDateInsightData(response.data.income);
@@ -110,8 +110,8 @@ const checkLoginData = async (checkData) => {
     }
 
   //Put Incoming
-    const upDateIncoming = async (id, incomingToUpdate) => {
-    await axios
+    const upDateIncoming = (id, incomingToUpdate) => {
+    axios
         .put(`https://edd-application.onrender.com/insights/${id}`, incomingToUpdate)
         .then((res) => {
         if (res.status === 200) {
