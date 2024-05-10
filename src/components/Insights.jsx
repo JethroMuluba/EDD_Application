@@ -45,7 +45,7 @@ function Insights() {
                 <img className=''  src={data.insights[0].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px]'>
+            <div className='flex flex-col mr-[20px] text-[#222834] font-medium text-[18px]'>
                 {insightDataIncome ? (
                     <h2 className='text-[26px] text-[#222834] '>
                         FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -72,7 +72,7 @@ function Insights() {
                 <img className=' '  src={data.insights[1].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px] '>
+            <div className='flex flex-col mr-[20px] text-[#222834] font-medium text-[18px] '>
                 {totalDailyExpenses ? (
                     <h2  className='text-[26px] text-[#222834] '>
                         FC {totalDailyExpenses.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -100,7 +100,7 @@ function Insights() {
                 <img className=''  src={data.insights[2].icone} alt="Calandar Icone" />
             </span>
 
-            <div className='flex flex-col mr-[45px] text-[#222834] font-medium text-[18px] '>
+            <div className='flex flex-col mr-[20px] text-[#222834] font-medium text-[18px] '>
             {incomeRest ? (
                     <h2  className='text-[26px] text-[#222834] '>
                         FC {incomeRest.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
