@@ -244,7 +244,7 @@ function HeaderActions() {
                             </Link>
                         </li>
                         <li>
-                            <Link to={'/Login'} className='flex items-center gap-2 '>
+                            <Link to={'/'} className='flex items-center gap-2 '>
                                 <img src={data.icones[5].icone} alt=""/>  <p className='text-white hover:text-[#F4CA8D]'>Quittez</p>
                             </Link>
                         </li>
