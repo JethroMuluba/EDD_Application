@@ -86,9 +86,9 @@ function HeaderActions() {
             reset();
             setShowFormIncoming(false);
             addIncoming(addNewIncoming);
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+            // setTimeout(() => {
+            //     window.location.reload();
+            // }, 1000);
         }
 
 
