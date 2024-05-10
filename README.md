@@ -1,70 +1,59 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=14782200&assignment_repo_type=AssignmentRepo)
-Read me, please!
+"Etre Derrière tes Dépenses" EDD
 
-function Home() {
-    const [showMenu, setShowMenu] = useState({
-        services: false,
-        resources: false,
-        contact: false,
-        about: false
-    });
+Description
+EDD est une application web de gestion de finances personnelles qui permet aux utilisateurs de suivre leurs dépenses, de gérer leur budget et de visualiser des insights financiers.
 
-    const handleMouseEnter = (menu) => {
-        setShowMenu({ ...showMenu, [menu]: true });
-    };
+L'application offre les fonctionnalités suivantes :
 
-    const handleMouseLeave = (menu) => {
-        setShowMenu({ ...showMenu, [menu]: false });
-    };
+1. Enregistrement des dépenses avec catégorie, montant, date et heure.
+2. Enregistrement des revenus avec montant, date et heure.
+3. Visualisation des dépenses et revenus sous forme de listes.
+4. Calcul des totaux des dépenses et revenus par jour, semaine et mois.
+5. Affichage d'insights financiers tels que le total des dépenses par catégorie, le solde actuel, etc.
+6. Authentification des utilisateurs avec JWT (JSON Web Token).
+7. Gestion des sessions utilisateur.
+8. Envoi de code de confirmation par e-mail pour l'inscription.
+9. L'application est développée en utilisant Express.js pour le backend, Prisma ORM pour l'interaction avec la base de données PostgreSQL,  React.js pour le frontend et Tailwind CSS pour le style.
 
+Installation
+Pour installer et exécuter localement le projet, suivez les instructions suivantes :
 
+Clonez le dépôt :
+git clone [https://github.com/kadea-academy-learners/capstone2-c2-JethroMuluba.git]
 
+Accédez au répertoire du projet :
+cd votre-projet
 
+Installez les dépendances :
+npm install
 
+Configuration
+Créez un fichier .env à la racine du projet et ajoutez les variables d'environnement nécessaires :
 
+DATABASE_URL=URL_DE_VOTRE_BASE_DE_DONNÉES
+DB_USERNAME=VOTRE_NOM_D_UTILISATEUR
+DB_PASSWORD=VOTRE_MOT_DE_PASSE
+JWT_SECRET=VOTRE_CLÉ_SECRÈTE_JWT
 
-                        <ul className="flex w-full gap-[50px]">
-                            <li className="mr-6 relative" onMouseEnter={() => handleMouseEnter('services')} onMouseLeave={() => handleMouseLeave('services')}>
-                                <a href="" className="hover:text-gray-300">Direction</a>
-                                {showMenu.services && (
-                                    <ul className="absolute top-full left-0 bg-white border border-gray-200 py-2 px-4">
-                                        <li><a href="#">Discipline</a></li>
-                                        <li><a href="#">Etude</a></li>
-                                        <li><a href="#">Finance</a></li>
-                                    </ul>
-                                )}
-                            </li>
+Assurez-vous que votre base de données est configurée et accessible.
+Scripts disponibles
+start: Démarre le serveur en mode production.
+dev: Démarre le serveur en mode développement avec rechargement automatique.
+migrate:dev: Exécute les migrations de la base de données en mode développement.
+migrate:prod: Exécute les migrations de la base de données en mode production.
 
-                            <li className="mr-6 relative" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={() => handleMouseLeave('resources')}>
-                                <a href="" className="hover:text-gray-300">Resources</a>
-                                {showMenu.resources && (
-                                    <ul className="absolute top-full left-0 bg-white border border-gray-200 py-2 px-4">
-                                        <li><a href="#">Humaine</a></li>
-                                        <li><a href="#">Materiels 2</a></li>
-                                        <li><a href="#">Scientifique </a></li>
-                                    </ul>
-                                )}
-                            </li>
+Exécution
+Pour démarrer le serveur en mode développement, utilisez la commande suivante :
+npm run dev
+Le serveur sera disponible à l'adresse : http://localhost:3000
 
-                            <li className="mr-6 relative" onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={() => handleMouseLeave('contact')}>
-                                <a href="" className="hover:text-gray-300">Contact</a>
-                                {showMenu.contact && (
-                                    <ul className="absolute top-full left-0 bg-white border border-gray-200 py-2 px-4">
-                                        <li><a href="#">Contact 1</a></li>
-                                        <li><a href="#">Contact 2</a></li>
-                                        <li><a href="#">Contact 3</a></li>
-                                    </ul>
-                                )}
-                            </li>
+Déploiement
+Pour déployer l'application sur votre plateforme préférée, suivez les instructions de déploiement fournies par le fournisseur de services.
 
-                            <li className="mr-6 relative" onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={() => handleMouseLeave('about')}>
-                                <a href="" className="hover:text-gray-300">About</a>
-                                {showMenu.about && (
-                                    <ul className="absolute top-full left-0 bg-white border border-gray-200 py-2 px-4">
-                                        <li><a href="#">About 1</a></li>
-                                        <li><a href="#">About 2</a></li>
-                                        <li><a href="#">About 3</a></li>
-                                    </ul>
-                                )}
-                            </li>
-                        </ul>
+Initialisation de la base de données
+Pour initialiser votre base de données avec des données de test, vous pouvez utiliser les scripts fournis dans le répertoire scripts/db.
+
+Assurez-vous que votre base de données est configurée correctement dans votre fichier .env.
+Exécutez le script de migration en mode développement :
+
+npm run migrate:dev
