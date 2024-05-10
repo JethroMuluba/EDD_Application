@@ -37,7 +37,7 @@ function Insights() {
     }, [getTableExpensiveData]);
     return (
     
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-10  '>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
 
         <div className='flex justify-between items-center gap-[25px]  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
 

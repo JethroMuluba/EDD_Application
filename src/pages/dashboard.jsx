@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <section className='bg-white lg:w-4/5 android:w-full'>
       <Header headerTitle={`Dashboard`} />
-      <main className='flex flex-col justify-items-end gap-[24px] p-[24px] '>
+      <main className='flex flex-col relative android:top-[75px] justify-items-end gap-[24px] p-[24px] '>
         <Insights/>
         <section className='flex flex-col items-start gap-[35px] md:flex-row'>
           <ExpensiveTimeLine/>
