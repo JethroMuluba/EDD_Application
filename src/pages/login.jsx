@@ -59,12 +59,12 @@ const Login = () => {
 
             <p className='text-white text-sm'>Ou connectez-vous avec </p>
 
-            <div className='flex gap-[16px]  android:justify-between '>
-              <img src={data.icones[9].line} alt="" />
+            <div className='flex gap-[16px] android:justify-between '>
+              <img className='macbookAir:w-[100px]' src={data.icones[9].line} alt="" />
               <Link >
                 <img src={data.icones[9].googleIcone} alt="Google Icone" />
               </Link>
-              <img src={data.icones[9].line}alt="" />
+              <img className='macbookAir:w-[100px]' src={data.icones[9].line}alt="" />
             </div>
 
             <p className='text-white text-sm'>Vous n'avez pas de compte?  <Link  to={'/register'} className='text-[#F4CA8D] hover:text-[#e2bc82]'>Enregistrez-vous ici</Link></p>
