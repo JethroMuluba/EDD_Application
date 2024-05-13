@@ -10,7 +10,7 @@ function TableExpensiveTimeline() {
     <div className="overflow-x-auto">
         <table className='min-w-full divide-y divide-gray-200 text-[#222834]'>
             <thead className=''>
-                <tr className='w-full font-normal'>
+                <tr className='w-full font-normal '>
                     <th className='py-[10px] pr-[26px]'>
                         <input className='rounded-sm ' type="checkbox" id="select_all"/>
                         <label className='cursor-pointer mb-0' htmlFor="select_all"></label>
@@ -23,9 +23,9 @@ function TableExpensiveTimeline() {
                     <th className='py-[10px] pr-[80px] font-medium'>Actions</th>
                 </tr>
             </thead>
-            <tbody className='divide-y divide-gray-200'>
+            <tbody className='divide-y divide-gray-200 '>
                 {getTableExpensiveData ? (getTableExpensiveData.map((data) => (
-                            <tr key={data.id} >
+                            <tr key={data.id}  className=''>
                                 <td className='py-[10px] pr-[26px] whitespace-nowrap'>
                                     <div className=''>
                                         <input className='rounded-sm ' type="checkbox" id={`customCheck${data.id}`}/>
