@@ -16,10 +16,10 @@ function TableExpensiveTimeline() {
                         <label className='cursor-pointer mb-0' htmlFor="select_all"></label>
                     </th>
 
-                    <th className='py-[10px] pr-[80px] font-medium '>Catégories</th>
-                    <th className='py-[10px] pr-[60px] font-medium'>Montants</th>
-                    <th className='py-[10px] pr-[80px] font-medium'>Dates</th>
-                    <th className='py-[10px] pr-[60px] font-medium'>Heures</th>
+                    <th className='py-[10px] macbookAir:pr-[40px] pr-[80px] font-medium '>Catégories</th>
+                    <th className='py-[10px] macbookAir:pr-[30px] pr-[60px] font-medium'>Montants</th>
+                    <th className='py-[10px] macbookAir:pr-[60px] pr-[80px] font-medium'>Dates</th>
+                    <th className='py-[10px] macbookAir:pr-[30px] pr-[60px] font-medium'>Heures</th>
                     <th className='py-[10px] pr-[80px] font-medium'>Actions</th>
                 </tr>
             </thead>
