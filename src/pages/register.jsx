@@ -88,11 +88,11 @@ const Register = () => {
             <p className='text-white text-sm'>Ou inscrivez-vous avec </p>
 
             <div className='flex gap-[16px] android:justify-between '>
-              <img src={data.icones[9].line} alt="" />
+              <img className='macbookAir:w-[100px]' src={data.icones[9].line} alt="" />
               <Link >
                 <img src={data.icones[9].googleIcone} alt="Google Icone" />
               </Link>
-              <img src={data.icones[9].line}alt="" />
+              <img className='macbookAir:w-[100px]' src={data.icones[9].line}alt="" />
             </div>
 
             <p className='text-white text-sm'>Avez-vous déjà un compte?  <Link  to={'/'} className='text-[#F4CA8D] hover:text-[#e2bc82]'>Connectez-vous ici</Link></p>
