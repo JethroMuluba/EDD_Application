@@ -6,7 +6,7 @@ import Graphic from '../components/graphic';
 
 function Dashboard() {
   return (
-    <section className=' relative 2xl:left-[304px] macbookAir:left-[257px] bg-white lg:w-4/5 android:w-full macbookAir:'>
+    <section className=' relative 2xl:left-[305px] macbookAir:left-[257px] bg-white lg:w-4/5 android:w-full macbookAir:'>
       <Header headerTitle={`Dashboard`} />
       <main className='flex flex-col relative android:top-[75px] justify-items-end gap-[24px] p-[24px] '>
         <Insights/>

@@ -39,13 +39,13 @@ function Insights() {
     
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
 
-        <div className='flex justify-between items-center macbookAir: macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className=' rounded-full px-[15px] py-[17px]'>
                 <img className=''  src={data.insights[0].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col macbookAir: lg:mr-[20px] text-[#222834] font-medium text-[18px]'>
+            <div className='flex flex-col macbookAir:mr-[10px] lg:mr-[20px] text-[#222834] font-medium text-[18px]'>
                 {insightDataIncome ? (
                     <h2 className='text-[26px] text-[#222834] '>
                         FC {insightDataIncome.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -66,13 +66,13 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex justify-between items-center macbookAir: macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
                 <img className=' '  src={data.insights[1].icone} alt="Clock Icone" />
             </span>
 
-            <div className='flex flex-col macbookAir: lg:mr-[20px] text-[#222834] font-medium text-[18px] '>
+            <div className='flex flex-col macbookAir:mr-[10px] lg:mr-[20px] text-[#222834] font-medium text-[18px]'>
                 {totalDailyExpenses ? (
                     <h2  className='text-[26px] text-[#222834] '>
                         FC {totalDailyExpenses.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
@@ -94,13 +94,13 @@ function Insights() {
             </span>
         </div>
 
-        <div className='flex justify-between items-center macbookAir: macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] rounded-[10px] shadow-md py-[17px]'>
+        <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
                 <img className=''  src={data.insights[2].icone} alt="Calandar Icone" />
             </span>
 
-            <div className='flex flex-col macbookAir: lg:mr-[20px] text-[#222834] font-medium text-[18px] '>
+            <div className='flex flex-col macbookAir:mr-[10px] lg:mr-[20px] text-[#222834] font-medium text-[18px]'>
             {incomeRest ? (
                     <h2  className='text-[26px] text-[#222834] '>
                         FC {incomeRest.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}
