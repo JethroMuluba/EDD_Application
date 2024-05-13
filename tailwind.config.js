@@ -14,6 +14,7 @@ export default {
 
       screens: {
         'android': '360px',
+        'macbookAir':'1280px'
       },
     },
   },
