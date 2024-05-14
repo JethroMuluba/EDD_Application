@@ -3,7 +3,7 @@ import data from '../data/data.json';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContextGlobal } from '../models/ContextGlobal';
-import { v4 as uuidv4 } from 'uuid'
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 function HeaderActions() {
@@ -147,20 +147,54 @@ function HeaderActions() {
         <div className='flex justify-between gap-[23px] items-center'>
             <div ref={toggleRef2} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
                 <img src={data.icones[6].add} alt="Add Icone" onClick={toggleMenuAdd} className='m-auto active:shadow-md active:rounded-full' />
+                <AnimatePresence>
                 {toggleAdd && (
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed left-0 shadow-4xl right-0 top-[3rem]  pt-0 border-b border-b-white/20"
+                  >
                     <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-900 rounded-[7px] shadow-xl shadow-gray-200 transition-shadow duration-250 ease-in-out pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
+                    <motion.li
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+                        >
                         <li>
                             <div className='flex items-center gap-2 ' onClick={() => {toggleForm(); setToggleAdd(false);}}>
                                 <img src={data.icones[6].addForDarkMode} alt=""  /> <p className='text-[#fff] font-medium hover:text-[#F4CA8D]'>Revenu</p>
                             </div>
                         </li>
+                    </motion.li>
+
+                    <motion.li
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+                        >
                         <li>
                             <div className='flex items-center gap-2 'onClick={() => {toggleExpensveForm(); setToggleAdd(false);}}>
                                 <img src={data.icones[6].addForDarkMode} alt=""/>  <p className='text-[#fff]  font-medium hover:text-[#F4CA8D]'>Dépenses</p>
                             </div>
                         </li>
+                    </motion.li>
+                    
                     </ul>
-                )}  
+                    </motion.div>
+                )} 
+                </AnimatePresence>
             </div>
 
             {/* Form of Incoming */}
