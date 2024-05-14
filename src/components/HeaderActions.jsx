@@ -183,9 +183,9 @@ function HeaderActions() {
 
             {/* Form Of Expensive */}
             {showFormExpensive && (
-                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute android:top-[180px] top-[250px] android:right-[10px] md:right-[50px] macbookAir:right-[300px] right-[450px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
+                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute android:top-[180px] macbookAir:top-[237px]  top-[250px] android:right-[10px] macbookAir:right-[300px] right-[450px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
                     
-                    <div className='flex android:flex-col justify-between gap-[20px] '>
+                    <div className='flex android:flex-col macbookAir:flex-row justify-between gap-[20px] '>
                         <div className='flex flex-col gap-[5px] items-start'>
                             <label htmlFor="" className='text-base text-[#213547] font-medium'>Catégories</label>
                             <select name="selectCategogy" id="" {...register("selectCategory", { required: true })} className='bg-[#fff] text-base text-[#213547] border border-[#213547] rounded-[5px] py-[6.6px] pl-[20px] outline-none'>
