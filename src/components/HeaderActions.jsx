@@ -165,7 +165,7 @@ function HeaderActions() {
 
             {/* Form of Incoming */}
             {showFormIncoming && (
-                <form ref={formIncomingRef} onSubmit={handleSubmit(onSubmitIncoming)} className='absolute android:top-[220px] top-[250px] android:right-[20px] macbookAir:right-[400px] right-[500px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
+                <form ref={formIncomingRef} onSubmit={handleSubmit(onSubmitIncoming)} className='absolute android:top-[220px] top-[250px] android:right-[10px] macbookAir:right-[400px] right-[500px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
                     <div className='flex flex-col gap-[5px] items-start'>
                         <label htmlFor="" className='text-base text-[#213547] font-medium'>Revenu Mensuelle</label>
                         <input type="number" placeholder='Entrez votre revenu ici' name='amount'  {...register("amount", {required:true, minLength: 3, maxLength:15})} className='bg-[#fff] rounded-[5px]  text-base text-[#213547] border border-[#213547] placeholder-gray-200 py-[5px] pl-[20px] outline-[1px] outline-[#213547] caret-[#213547] '/>
