@@ -8,7 +8,7 @@ function Header({headerTitle}) {
 
         <MenuBurger/>
 
-        <h1 className=' relative android:left-[45px] text-[26px] android:lelt-[50px] text-[#222834] '>
+        <h1 className=' relative android:left-[45px] text-[26px]  text-[#222834] 2xl:left-0 macbookAir:left-0 '>
             { headerTitle }
         </h1>
 

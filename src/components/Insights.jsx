@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import data from '../data/data.json';
 import { useContextGlobal } from '../models/ContextGlobal';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 function Insights() {
@@ -36,9 +37,24 @@ function Insights() {
         
     }, [getTableExpensiveData]);
     return (
-    
+    <AnimatePresence>
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+    >
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
-
+    <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+    >
         <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className=' rounded-full px-[15px] py-[17px]'>
@@ -65,7 +81,18 @@ function Insights() {
                 <img src={data.insights[0].border} alt="" />
             </span>
         </div>
+    </motion.div>
 
+    <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+    >
         <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
@@ -93,7 +120,18 @@ function Insights() {
                 <img src={data.insights[1].border} alt="" />
             </span>
         </div>
+    </motion.div>
 
+    <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+    >
         <div className='flex justify-between items-center macbookAir:gap-[18px] macbookAir: lg:gap-[25px] macbookAir:  android:pl-[10px] lg:pl-[27px] macbookAir:pl-[10px] rounded-[10px] shadow-md py-[17px]'>
 
             <span className='rounded-full px-[15px] py-[17px]'>
@@ -115,10 +153,13 @@ function Insights() {
                     <img src={data.insights[2].border} alt="" />
                 </span>
         </div>
- 
+    </motion.div>
+
 
     </div>
-  )
+    </motion.div>
+    </AnimatePresence>
+)
 }
 
 export default Insights;

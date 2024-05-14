@@ -145,7 +145,7 @@ function HeaderActions() {
 
     return (
         <div className='flex justify-between gap-[23px] items-center'>
-            <div ref={toggleRef2} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
+            <div ref={toggleRef2} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full cursor-pointer'>
                 <img src={data.icones[6].add} alt="Add Icone" onClick={toggleMenuAdd} className='m-auto active:shadow-md active:rounded-full' />
                 <AnimatePresence>
                 {toggleAdd && (
@@ -168,7 +168,7 @@ function HeaderActions() {
                         }}
                         >
                         <li>
-                            <div className='flex items-center gap-2 ' onClick={() => {toggleForm(); setToggleAdd(false);}}>
+                            <div className='flex items-center gap-2 cursor-pointer  ' onClick={() => {toggleForm(); setToggleAdd(false);}}>
                                 <img src={data.icones[6].addForDarkMode} alt=""  /> <p className='text-[#fff] font-medium hover:text-[#F4CA8D]'>Revenu</p>
                             </div>
                         </li>
@@ -185,7 +185,7 @@ function HeaderActions() {
                         }}
                         >
                         <li>
-                            <div className='flex items-center gap-2 'onClick={() => {toggleExpensveForm(); setToggleAdd(false);}}>
+                            <div className='flex items-center gap-2 cursor-pointer 'onClick={() => {toggleExpensveForm(); setToggleAdd(false);}}>
                                 <img src={data.icones[6].addForDarkMode} alt=""/>  <p className='text-[#fff]  font-medium hover:text-[#F4CA8D]'>Dépenses</p>
                             </div>
                         </li>
@@ -198,8 +198,15 @@ function HeaderActions() {
             </div>
 
             {/* Form of Incoming */}
+        <AnimatePresence>
             {showFormIncoming && (
-                <form ref={formIncomingRef} onSubmit={handleSubmit(onSubmitIncoming)} className='absolute android:top-[220px] top-[250px] android:right-[10px] macbookAir:right-[400px] right-[500px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                >
+                <form ref={formIncomingRef} onSubmit={handleSubmit(onSubmitIncoming)} className='absolute android:top-[220px] 2xl:top-[250px] android:right-[10px] macbookAir:right-[400px] 2xl:right-[500px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
                     <div className='flex flex-col gap-[5px] items-start'>
                         <label htmlFor="" className='text-base text-[#213547] font-medium'>Revenu Mensuelle</label>
                         <input type="number" placeholder='Entrez votre revenu ici' name='amount'  {...register("amount", {required:true, minLength: 3, maxLength:15})} className='bg-[#fff] rounded-[5px]  text-base text-[#213547] border border-[#213547] placeholder-gray-200 py-[5px] pl-[20px] outline-[1px] outline-[#213547] caret-[#213547] '/>
@@ -207,7 +214,9 @@ function HeaderActions() {
                     </div>
                     <button type='submit' className='bg-[#213547] px-[20px] py-[5px] rounded-[5px] hover:bg-cyan-900 text-lg font-medium  text-white  focus:outline-[#34B77B] focus:outline active:outline-none ' >Enregistrez</button>
                 </form>
+                </motion.div>
             )}
+        </AnimatePresence>
 
                     {showMessage && (
                         <div className="absolute top-[12px] right-[500px] bg-[#34B77B] text-white px-4 py-2 rounded">
@@ -216,8 +225,15 @@ function HeaderActions() {
                     )}
 
             {/* Form Of Expensive */}
+        <AnimatePresence>
             {showFormExpensive && (
-                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute android:top-[180px] macbookAir:top-[237px]  top-[250px] android:right-[10px] macbookAir:right-[300px] right-[450px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
+                <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                >
+                <form ref={formExpensiveRef} onSubmit={handleSubmit(onSubmitNewExpensive)} className='absolute android:top-[180px] macbookAir:top-[237px]  2xl:top-[250px] android:right-[10px] macbookAir:right-[300px] 2xl:right-[450px] transform translate-y-[17px] flex flex-col gap-[10px] bg-white rounded-[10px] shadow-3xl shadow-gray-200 transition-shadow duration-150 ease-in-out px-[50px] py-[25px] text-[12px] text-[#222834] '>
                     
                     <div className='flex android:flex-col macbookAir:flex-row justify-between gap-[20px] '>
                         <div className='flex flex-col gap-[5px] items-start'>
@@ -256,7 +272,9 @@ function HeaderActions() {
                     <button type='submit' className='bg-[#213547] px-[20px] py-[5px] rounded-[5px] hover:bg-cyan-900 text-lg font-medium  text-white  focus:outline-[#34B77B] focus:outline active:outline-none ' >Enregistrez</button>
 
                 </form>
+                </motion.div>
             )}
+        </AnimatePresence>
 
                             {showMessageExpensive && (
                                 <div className="absolute top-[12px] right-[500px] bg-[#34B77B] text-white px-4 py-2 rounded">
@@ -270,20 +288,54 @@ function HeaderActions() {
 
             <div ref={toggleRef} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
                 <img className='w-8 h-8 rounded-full' onClick={toggleMenu} src={data.icones[6].userAvatar} alt="User Avatar" />
+            <AnimatePresence>
                 {toggleAvatar && (
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed left-0 shadow-4xl right-0 top-[3rem]  pt-0 border-b border-b-white/20"
+                    >
                     <ul className='absolute top-full right-0 transform translate-y-[17px] flex flex-col gap-[10px] bg-cyan-950 rounded-[7px] shadow-xl shadow-gray-200 transition-shadow duration-250 ease-in-out pl-[20px] pr-[50px] py-[10px] text-[12px] text-[#222834] '>
+                        
+                    <motion.li
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+                    >
                         <li>
                             <Link to={'/Paramètres'} className='flex items-center gap-2 '>
                                 <img src={data.tableData[0].editeIcone} alt=""  /> <p className='text-white hover:text-[#F4CA8D]'>Profil</p>
                             </Link>
                         </li>
+                    </motion.li>
+
+                    <motion.li
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1,
+                        }}
+                    >
                         <li>
                             <Link to={'/'} className='flex items-center gap-2 '>
                                 <img src={data.icones[5].icone} alt=""/>  <p className='text-white hover:text-[#F4CA8D]'>Quittez</p>
                             </Link>
                         </li>
+                    </motion.li>
                     </ul>
+                    </motion.div>
                 )}
+            </AnimatePresence>
             </div>
         </div>
     );
