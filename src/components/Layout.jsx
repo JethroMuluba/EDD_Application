@@ -1,5 +1,4 @@
 import React from 'react'
-import ContextGlobalProvider from '../models/ContextGlobal';
 import Sidebar from './Sidebar';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -12,7 +11,7 @@ function Layout({ children }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-      className=' flex flex-row macbookAir:'>
+      className=' flex flex-row '>
         <Sidebar/>
         {children}
       </motion.div>
