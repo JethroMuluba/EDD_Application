@@ -287,7 +287,7 @@ function HeaderActions() {
             </button>
 
             <div ref={toggleRef} className='relative flex flex-col items-center gap-[10px]  m-auto active:shadow-md active:rounded-full'>
-                <img className='w-8 h-8 rounded-full' onClick={toggleMenu} src={data.icones[6].userAvatar} alt="User Avatar" />
+                <img onClick={toggleMenu} src={data.icones[6].userAvatar} alt="Settings icone" />
             <AnimatePresence>
                 {toggleAvatar && (
                     <motion.div
@@ -311,7 +311,7 @@ function HeaderActions() {
                     >
                         <li>
                             <Link to={'/Paramètres'} className='flex items-center gap-2 '>
-                                <img src={data.tableData[0].editeIcone} alt=""  /> <p className='text-white hover:text-[#F4CA8D]'>Profil</p>
+                                <img className=' w-6' src={data.tableData[0].editeIcone} alt=""  /> <p className='text-white hover:text-[#F4CA8D]'>Profil</p>
                             </Link>
                         </li>
                     </motion.li>
@@ -328,7 +328,7 @@ function HeaderActions() {
                     >
                         <li>
                             <Link to={'/'} className='flex items-center gap-2 '>
-                                <img src={data.icones[5].icone} alt=""/>  <p className='text-white hover:text-[#F4CA8D]'>Quittez</p>
+                                <img className=' w-6' src={data.icones[5].icone} alt=""/>  <p className='text-white hover:text-[#F4CA8D]'>Quittez</p>
                             </Link>
                         </li>
                     </motion.li>
