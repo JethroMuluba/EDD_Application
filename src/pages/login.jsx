@@ -3,6 +3,7 @@ import data from '../data/data.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useContextGlobal } from '../models/ContextGlobal';
+import { AnimatePresence, motion} from 'framer-motion';
 
 
 const Login = () => {
@@ -25,7 +26,17 @@ const Login = () => {
   return (
 
 <div className=' android:w-full flex justify-center items-center h-screen bg-gray-100'>
-  <div className='lg:w-2/4 android:w-full  lg:flex lg:flex-row android:flex-col absolute  lg:rounded-[10px] android:rounded-none lg:shadow-md android:shadow-none lg:shadow-gray-400 '>
+  <AnimatePresence>
+  <motion.div 
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+      delay: 0.1,
+      }}
+  className='lg:w-2/4 android:w-full  lg:flex lg:flex-row android:flex-col absolute  lg:rounded-[10px] android:rounded-none lg:shadow-md android:shadow-none lg:shadow-gray-400 '>
     <img className=' lg:w-1/2 android:w-full  bg-white rounded-l-[10px]' src={data.icones[9].illustration1} alt="Illustration Personal Finance" />
 {/* Login Form */}
     <div className='bg-[#093648] w-1/2 android:w-full flex flex-col gap-[20px] lg:rounded-r-[10px] android:rounded-none  py-[20px] px-[20px]'>
@@ -72,8 +83,8 @@ const Login = () => {
         </div>
       </form>
     </div>
-  </div>
-
+  </motion.div>
+  </AnimatePresence>
 </div>
   )
 }
