@@ -6,6 +6,7 @@ import { useContextGlobal } from '../models/ContextGlobal';
 function TableExpensiveTimeline() {
 
     const {getTableExpensiveData} = useContextGlobal();
+    const tableExpensiveData = getTableExpensiveData;
   return (
     <div className="overflow-x-auto">
         <table className='min-w-full divide-y divide-gray-200 text-[#222834]'>
@@ -16,15 +17,15 @@ function TableExpensiveTimeline() {
                         <label className='cursor-pointer mb-0' htmlFor="select_all"></label>
                     </th>
 
-                    <th className='py-[10px] macbookAir:pr-[40px] pr-[80px] font-medium '>Catégories</th>
-                    <th className='py-[10px] macbookAir:pr-[30px] pr-[60px] font-medium'>Montants</th>
-                    <th className='py-[10px] macbookAir:pr-[60px] pr-[80px] font-medium'>Dates</th>
-                    <th className='py-[10px] macbookAir:pr-[30px] pr-[60px] font-medium'>Heures</th>
-                    <th className='py-[10px] pr-[80px] font-medium'>Actions</th>
+                    <th className='2xl:py-[10px] macbookAir:pr-[40px] 2xl:pr-[80px] font-medium '>Catégories</th>
+                    <th className='2xl:py-[10px] macbookAir:pr-[30px] 2xl:pr-[60px] font-medium'>Montants</th>
+                    <th className='2xl:py-[10px] macbookAir:pr-[60px] 2xl:pr-[80px] font-medium'>Dates</th>
+                    <th className='2xl:py-[10px] macbookAir:pr-[30px] 2xl:pr-[60px] font-medium'>Heures</th>
+                    <th className='2xl:py-[10px] 2xl:pr-[80px] font-medium'>Actions</th>
                 </tr>
             </thead>
             <tbody className='divide-y divide-gray-200 '>
-                {getTableExpensiveData ? (getTableExpensiveData.map((data) => (
+                {tableExpensiveData ? (tableExpensiveData.map((data) => (
                             <tr key={data.id}  className=''>
                                 <td className='py-[10px] pr-[26px] whitespace-nowrap'>
                                     <div className=''>
@@ -68,7 +69,7 @@ function TableExpensiveTimeline() {
                 <tr className=''>
                     <td className='px-6 py-4 whitespace-nowrap ' colSpan="6">
                         <div className='flex gap-2'>
-                            <h3 className="text-gray-500">Aucune dépenses enregistrée pour le moment ! Veuillez cliquer sur</h3>
+                            <h3 className="text-gray-500">Aucune dépense enregistrée pour le moment ! Veuillez cliquer sur</h3>
                             <button className='active:shadow-md active:rounded-full'>
                                 <img src={data.icones[6].add} alt="" />
                             </button>
