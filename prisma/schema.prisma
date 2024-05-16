@@ -22,7 +22,9 @@ model Utilisateur {
   adresse  String
   telephone  Int @unique
   email String @unique
-  password String 
+  password String
+  confirmationCode  String 
+  isConfirmed       Boolean  @default(false)
 
   revenuMensuelle RevenuMensuelle[]
   depenses Depenses[]

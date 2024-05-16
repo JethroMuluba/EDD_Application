@@ -1,5 +1,6 @@
 const prisma = require('../database/prima');
 const bcrypt  = require("bcrypt");
+const { sendConfirmationEmail } = require('../models/mailer');
 
 const registerCtr = async  (req, res) => {
     try {
@@ -11,14 +12,18 @@ const registerCtr = async  (req, res) => {
                 adresse :  req.body.adresse,
                 telephone :   parseInt(req.body.telephone, 10),
                 email : req.body.email,
-                password : hashedPassword
-            }
+                password : hashedPassword,
+                confirmationCode : Math.floor(100000 + Math.random() * 900000).toString(),
+                isConfirmed : false,
+            },
         });
+
+        await sendConfirmationEmail(createUser.email, createUser.confirmationCode);
         res.status(201).json(createUser);
-        console.log('User successfully Registered');
+        console.log('User successfully Registered. Please check your email for the confirmation code.');
     } catch (error) {
         console.log('Error while user registration : ', error);
-        res.status(500);
+        res.status(500).json({ error: 'User registration failed.' });
     }
 }
 

@@ -10,6 +10,7 @@ const dashboardRoute = require('./routes/dashboard');
 const userRegister = require('./routes/register');
 const loginRouter = require("./routes/login");
 const passport = require('passport');
+const confirmRouter = require('./routes/confirm');
 
 
 //Import Dotenv
@@ -27,6 +28,8 @@ app.use(passport.initialize());
 app.use('/login', loginRouter);
 //Set register Route
 app.use('/register', userRegister);
+//Set Confirmed Route
+app.use('/register_confirm', confirmRouter);
 
 //Set Dashboard Route
 app.use('/dashboard', dashboardRoute);
