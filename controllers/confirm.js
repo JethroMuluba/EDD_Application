@@ -25,7 +25,8 @@ const confirmCtrl = async (req, res) => {
 
         const token = jwt.sign({id : user.id }, process.env.JWT_SECRET, { expiresIn : '1h'});
 
-        res.status(200).json({message : 'Votre compte est confirmé avec succès', token});
+        res.status(200).json({message : 'Votre compte est confirmé avec succès', token, user});
+        console.log(user);
     } catch (error) {
         res.status(500).json({message : 'Erreur lors de la confirmation de votre compte', error});
         ;
