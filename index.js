@@ -24,8 +24,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
-//Get User
-app.use('/users', usersRouter);
+//Set User Route
+app.use('/', usersRouter);
 //Set Login Route
 app.use('/login', loginRouter);
 //Set register Route
