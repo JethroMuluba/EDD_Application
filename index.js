@@ -11,6 +11,7 @@ const userRegister = require('./routes/register');
 const loginRouter = require("./routes/login");
 const passport = require('passport');
 const confirmRouter = require('./routes/confirm');
+const usersRouter = require('./routes/users');
 
 
 //Import Dotenv
@@ -23,7 +24,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
-
+//Get User
+app.use('/users', usersRouter);
 //Set Login Route
 app.use('/login', loginRouter);
 //Set register Route
