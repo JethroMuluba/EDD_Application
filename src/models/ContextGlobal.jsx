@@ -10,20 +10,37 @@ export const useContextGlobal = () => {
 };
 
 const ContextGlobalProvider = ({ children }) => {
+    const navigate = useNavigate();
 
 // Create New User
 const createNewUser = async (newUser) => {
     try {
         const response = await axios.post("https://edd-application.onrender.com/register", newUser )
         console.log("Utilisateur enregistré avec succès", response.data);
-        navigate('/dashboard')
+        navigate('/register_confirm')
     } catch (error) {
-        console.error("Erreur lors de l'inscruption :", error.response.data);
+        console.error("Erreur lors de l'inscription de l'utilisateur :", error.response.data);
     }
 }
 
+//Get Email for confirmation
+const [confirmedEmail, setConfirmedEmail] = useState();
+
+//Post Confirmation Code
+const userConfirmation = async (confirmationData) => {
+    try {
+        const confirmedUser = await axios.post("https://edd-application.onrender.com/register_confirm", confirmationData );
+        if (confirmedUser.data.token) {
+            localStorage.setItem('token', confirmedUser.data.token); 
+        };
+        console.log("Utilisateur confirmé avec succès", confirmedUser.data);
+                navigate('/dashboard')
+    } catch (error) {
+        console.error("Erreur lors de la confirmation :", error.confirmedUser.data);
+        
+    }
+}
 //Post Login Data
-const navigate = useNavigate();
 
 const checkLoginData = async (checkData) => {
         try {
@@ -35,20 +52,7 @@ const checkLoginData = async (checkData) => {
         }
 };
 
-//Get User Id From JWT
-    // const getUserIdFromToken = () => {
-    //     const token = localStorage.getItem('token');
-    //         if (!token) {
-    //             return null;
-    //         };
-        
-    //     const decodedToken = jwt.decode(token)
-    //         if (!decodedToken || Date.now() >= decodedToken.exp * 1000) {
-    //             return null;
-    //         };
-    //         return decodedToken.id;
-    // }
-    // console.log(getUserIdFromToken);
+
 //Get Expensive Table Data
     const [getTableExpensiveData, upDateTableExpensiveData] = useState([]);
 
@@ -94,7 +98,7 @@ const checkLoginData = async (checkData) => {
     }, []);
 
     if (getInsightData === null) {
-    return "Chargement en cours... c'est vrai ça";
+    return "Chargement en cours... ";
     }
 
   //Post Incoming
@@ -143,6 +147,9 @@ const checkLoginData = async (checkData) => {
         addExpensive,
         checkLoginData,
         createNewUser,
+        confirmedEmail, 
+        setConfirmedEmail,
+        userConfirmation
         }}
     >
         {children}

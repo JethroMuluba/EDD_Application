@@ -10,7 +10,7 @@ const Register = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const {createNewUser} = useContextGlobal();
+  const {createNewUser, setConfirmedEmail} = useContextGlobal();
 
   const onSubmitRegisterData = (data) => {
     const createUser = {
@@ -20,9 +20,11 @@ const Register = () => {
       adresse : data.adresse,
       email : data.email,
       password : data.password
+      
     }
 
     createNewUser(createUser);
+    setConfirmedEmail(data.email);
     reset();
   };
 

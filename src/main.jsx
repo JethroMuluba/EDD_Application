@@ -11,6 +11,7 @@ import Paramètres from './pages/paramètres.jsx'
 import Login from './pages/login.jsx'
 import Auth from '../Auth.jsx'
 import Register from './pages/register.jsx'
+import ConfirmedRegister from './pages/confirmedRegister.jsx'
 
 const router = createBrowserRouter([
   
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register/>,
+      },
+      {
+        path : '/register_confirm',
+        element : <ConfirmedRegister/>
       }
     ]
   },
