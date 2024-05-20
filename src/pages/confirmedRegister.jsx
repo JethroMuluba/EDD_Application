@@ -13,10 +13,10 @@ const ConfirmedRegister = () => {
   const {userConfirmation, confirmedEmail} = useContextGlobal();
 
   const onSubmitLoginData = (data) => {
-    const email = confirmedEmail;
+    
     const confimedUser = {
-      email : email,
-        confirmedCode : data.confirmationCode
+      email : confirmedEmail,
+      confirmationCode : data.confirmationCode
     }
 
     userConfirmation(confimedUser);

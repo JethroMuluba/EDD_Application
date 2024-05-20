@@ -15,7 +15,7 @@ const ContextGlobalProvider = ({ children }) => {
 // Create New User
 const createNewUser = async (newUser) => {
     try {
-        const response = await axios.post("https://edd-application.onrender.com/register", newUser )
+        const response = await axios.post("http://localhost:3004/register", newUser )
         console.log("Utilisateur enregistré avec succès", response.data);
         navigate('/register_confirm')
     } catch (error) {
@@ -29,7 +29,7 @@ const [confirmedEmail, setConfirmedEmail] = useState();
 //Post Confirmation Code
 const userConfirmation = async (confirmationData) => {
     try {
-        const confirmedUser = await axios.post("https://edd-application.onrender.com/register_confirm", confirmationData );
+        const confirmedUser = await axios.post("http://localhost:3004/register_confirm", confirmationData );
         if (confirmedUser.data.token) {
             localStorage.setItem('token', confirmedUser.data.token); 
         };
@@ -44,7 +44,7 @@ const userConfirmation = async (confirmationData) => {
 
 const checkLoginData = async (checkData) => {
         try {
-            const response = await axios.post("https://edd-application.onrender.com/login", checkData);
+            const response = await axios.post("http://localhost:3004/login", checkData);
                 console.log("Utilisateur connecté avec succès", response.data);
                 navigate('/dashboard')
         } catch (error) {
@@ -58,7 +58,7 @@ const checkLoginData = async (checkData) => {
 
     useEffect(() => {
      axios
-        .get("https://edd-application.onrender.com/dashboard")
+        .get("http://localhost:3004/dashboard")
         .then((response) => {
         upDateTableExpensiveData(response.data.expenses);
         })
@@ -74,7 +74,7 @@ const checkLoginData = async (checkData) => {
   //Post Expensive
     const addExpensive = async (newExpensive) => {
     await axios
-        .post("https://edd-application.onrender.com/dashboard", newExpensive)
+        .post("http://localhost:3004/dashboard", newExpensive)
         .then((response) => {
             return upDateTableExpensiveData([
                 response.data.createExpense,
@@ -89,7 +89,7 @@ const checkLoginData = async (checkData) => {
 
     useEffect( () => {
     axios
-        .get("https://edd-application.onrender.com/dashboard")
+        .get("http://localhost:3004/dashboard")
         .then((response) => {
         upDateInsightData(response.data.income);
         })
@@ -104,7 +104,7 @@ const checkLoginData = async (checkData) => {
   //Post Incoming
     const addIncoming = async (newIncoming) => {
         await axios
-            .post("https://edd-application.onrender.com/dashboard", newIncoming)
+            .post("http://localhost:3004/dashboard", newIncoming)
             .then((response) => {
                 return upDateInsightData([
                     response.data.createIncome, 
@@ -116,7 +116,7 @@ const checkLoginData = async (checkData) => {
   //Put Incoming
     const upDateIncoming = (id, incomingToUpdate) => {
     axios
-        .put(`https://edd-application.onrender.com/insights/${id}`, incomingToUpdate)
+        .put(`http://localhost:3004/insights/${id}`, incomingToUpdate)
         .then((res) => {
         if (res.status === 200) {
             upDateInsightData((prevData) => {
