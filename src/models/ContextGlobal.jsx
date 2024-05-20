@@ -46,7 +46,13 @@ const checkLoginData = async (checkData) => {
         try {
             const response = await axios.post("http://localhost:3004/login", checkData);
                 console.log("Utilisateur connecté avec succès", response.data);
-                navigate('/dashboard')
+                localStorage.setItem('token', response.data.token);
+                if(response.data.user.isConfirmed === true) {
+                    navigate('/dashboard')
+                } else {
+                    navigate('/register_confirm')
+                    console.log("Compte non confirmé, veuillez entrer votre code de confirmation envoyait dans l'email dont vous avez soumis lors de l'inscription. Merci");
+                }
         } catch (error) {
             console.error("Erreur lors de la connexion :", error.response.data);
         }

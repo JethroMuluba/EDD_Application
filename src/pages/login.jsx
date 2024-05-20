@@ -10,15 +10,16 @@ const Login = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const {checkLoginData} = useContextGlobal();
+  const {checkLoginData, setConfirmedEmail} = useContextGlobal();
 
   const onSubmitLoginData = (data) => {
     const checkUser = {
       email : data.email,
-      password : data.password
+      password : data.password,
     }
 
     checkLoginData(checkUser);
+    setConfirmedEmail(data.email)
     reset();
   };
 
