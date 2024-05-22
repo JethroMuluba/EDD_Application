@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../data/data.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useContextGlobal } from '../models/ContextGlobal';
 import { AnimatePresence, motion } from 'framer-motion';
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5";
 
 
 const Register = () => {
@@ -11,6 +13,11 @@ const Register = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const {createNewUser, setConfirmedEmail} = useContextGlobal();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmitRegisterData = (data) => {
     const createUser = {
@@ -84,7 +91,15 @@ const Register = () => {
 
           <div className='flex flex-col gap-[5px] items-start'>
             <label htmlFor="" className='block text-white text-base'>Mot de passe</label>
-            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] ' type="password" />
+            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] leading-tight' type={showPassword ? "text" : "password"} />
+
+            <button
+              type="button"
+              className="absolute right-8 android:top-[890px] lg:top-[498px] transform -translate-y-1/2 bg-transparent border-none cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+            </button>
             {errors.password && <span style={{color: '#DA5643', fontSize: '12px'}}>Le mot de passe est obligatoir</span>}
           </div>
 

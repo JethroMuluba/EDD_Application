@@ -68,7 +68,7 @@ const Login = () => {
             
             <button
               type="button"
-              className="absolute right-8 top-[201px] transform -translate-y-1/2 bg-transparent border-none cursor-pointer"
+              className="absolute right-8 android:top-[594px]  lg:top-[201px] transform -translate-y-1/2 bg-transparent border-none cursor-pointer"
               onClick={togglePasswordVisibility}
             >
               {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
@@ -84,7 +84,7 @@ const Login = () => {
                 className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
                 
 
-          <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   focus:animate-pulse focus:outline active:outline-none '>
+          <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   ocus:animate-pulse focus:outline active:outline-none '>
             <span className="hidden lg:inline">Se connecter</span>
             <span className="lg:hidden  ">Se connecter</span>
           </button>
