@@ -12,6 +12,10 @@ export const useContextGlobal = () => {
 const ContextGlobalProvider = ({ children }) => {
     const navigate = useNavigate();
 
+    //Manage Error Message
+    const [errorMessage, getErrorMessage] = useState('');
+    // console.log('Error Message :', errorMessage );
+
 // Create New User
 const createNewUser = async (newUser) => {
     try {
@@ -49,8 +53,7 @@ const userConfirmation = async (confirmationData) => {
     const [userId, setUserId] = useState();
     // console.log('Id of User Connected : ', userId);
 
-    const [errorMessage, getErrorMessage] = useState('');
-        console.log('Error Message :', errorMessage );
+
 
 const checkLoginData = async (checkData) => {
         try {
