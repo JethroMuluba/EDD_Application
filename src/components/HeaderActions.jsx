@@ -72,13 +72,13 @@ function HeaderActions() {
     }, []);
 
         // Add New Incoming
-        const {addIncoming, addExpensive } = useContextGlobal();
+        const {addIncoming, addExpensive, userLoggedId } = useContextGlobal();
         
         const onSubmitIncoming = (data) => {
             const addNewIncoming = {
                 type : "revenu",
                 montant: parseInt(data.amount),
-                utilisateur : 2,
+                utilisateur : userLoggedId,
             }
 
             setShowMessage(true); 
@@ -133,7 +133,7 @@ function HeaderActions() {
             type : "depense",
             categories: data.selectCategory,
             montant: parseInt(data.amountExp),
-            utilisateur : 2,
+            utilisateur : userLoggedId,
         };
 
         setShowFormExpensive(false);
