@@ -12,8 +12,8 @@ const Register = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const {createNewUser, setConfirmedEmail} = useContextGlobal();
-
+  const {createNewUser, setConfirmedEmail, errorMessage} = useContextGlobal();
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -32,7 +32,8 @@ const Register = () => {
 
     createNewUser(createUser);
     setConfirmedEmail(data.email);
-    reset();
+    setShowErrorMessage(true);
+    setTimeout(() => setShowErrorMessage(false), 5000)
   };
 
   
@@ -103,7 +104,14 @@ const Register = () => {
             {errors.password && <span style={{color: '#DA5643', fontSize: '12px'}}>Le mot de passe est obligatoir</span>}
           </div>
 
-          <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   focus:animate-pulse focus:outline active:outline-none '>
+          {showErrorMessage && (<motion.p 
+                                          initial={{ opacity: 0 }}
+                                          animate={{ opacity: 1 }}
+                                          exit={{ opacity: 1 }}
+                                          transition={{ duration: 0.2 }}
+                className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
+
+          <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   ocus:animate-pulse focus:outline active:outline-none '>
             <span className="hidden lg:inline">S'inscrire</span>
             <span className="lg:hidden  ">S'inscrire</span>
           </button>

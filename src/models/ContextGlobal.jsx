@@ -14,6 +14,7 @@ const ContextGlobalProvider = ({ children }) => {
 
     //Manage Error Message
     const [errorMessage, getErrorMessage] = useState(null);
+    console.log('Error during register :',errorMessage);
 
 // Create New User
 const createNewUser = async (newUser) => {
@@ -21,8 +22,10 @@ const createNewUser = async (newUser) => {
         const response = await axios.post("http://localhost:3004/register", newUser )
         console.log("Utilisateur enregistré avec succès", response.data);
         navigate('/register_confirm')
+        getErrorMessage(null);
     } catch (error) {
-        console.error("Erreur lors de l'inscription de l'utilisateur :", error.response.data);
+        console.error("Erreur lors de l'inscription de l'utilisateur :", error.response.data.error);
+        getErrorMessage(error.response.data.error);
     }
 }
 
