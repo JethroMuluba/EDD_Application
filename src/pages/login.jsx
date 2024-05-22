@@ -60,7 +60,12 @@ const Login = () => {
             {errors.password && <span style={{color: '#DA5643', fontSize: '12px'}}>Le mot de passe est obligatoir</span>}
           </div>
 
-                {showErrorMessage && (<p className=' text-red-600 font-normal text-sm'>{errorMessage}</p>)}
+                {showErrorMessage && (<motion.p 
+                                          initial={{ opacity: 0 }}
+                                          animate={{ opacity: 1 }}
+                                          exit={{ opacity: 1 }}
+                                          transition={{ duration: 0.6 }}
+                className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
                 
 
           <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   focus:animate-pulse focus:outline active:outline-none '>

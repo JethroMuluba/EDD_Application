@@ -63,6 +63,7 @@ const checkLoginData = async (checkData) => {
                 localStorage.setItem('token', response.data.token);
                 if (response.data.user && response.data.user.id) {
                     setUserId(response.data.user.id);
+                    console.log('Id of Logged User :', response.data.user.id);
                     navigate('/dashboard');
                     } else {
                     console.error("Les données utilisateur sont manquantes dans la réponse.");
