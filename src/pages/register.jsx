@@ -105,10 +105,14 @@ const Register = () => {
           </div>
 
           {showErrorMessage && (<motion.p 
-                                          initial={{ opacity: 0 }}
-                                          animate={{ opacity: 1 }}
-                                          exit={{ opacity: 1 }}
-                                          transition={{ duration: 0.2 }}
+                                          initial={{ scale: 0, opacity: 0 }}
+                                          animate={{ scale: 1, opacity: 1 }}
+                                          transition={{
+                                          type: "spring",
+                                          stiffness: 260,
+                                          damping: 20,
+                                          delay: 0.1,
+                                          }}
                 className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
 
           <button type='submit' className='w-full bg-[#F4CA8D] px-[20px] py-[5px] rounded-[5px] hover:bg-[#e2bc82] text-lg font-medium  text-[#093648]   ocus:animate-pulse focus:outline active:outline-none '>

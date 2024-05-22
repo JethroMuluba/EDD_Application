@@ -77,10 +77,14 @@ const Login = () => {
           </div>
 
                 {showErrorMessage && (<motion.p 
-                                          initial={{ opacity: 0 }}
-                                          animate={{ opacity: 1 }}
-                                          exit={{ opacity: 1 }}
-                                          transition={{ duration: 0.2 }}
+                                          initial={{ scale: 0, opacity: 0 }}
+                                          animate={{ scale: 1, opacity: 1 }}
+                                          transition={{
+                                          type: "spring",
+                                          stiffness: 260,
+                                          damping: 20,
+                                          delay: 0.1,
+                                          }}
                 className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
                 
 
