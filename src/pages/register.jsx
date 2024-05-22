@@ -84,7 +84,7 @@ const Register = () => {
 
           <div className='flex flex-col gap-[5px] items-start'>
             <label htmlFor="" className='block text-white text-base'>Mot de passe</label>
-            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] ' type="text" />
+            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] ' type="password" />
             {errors.password && <span style={{color: '#DA5643', fontSize: '12px'}}>Le mot de passe est obligatoir</span>}
           </div>
 

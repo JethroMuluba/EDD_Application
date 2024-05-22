@@ -14,7 +14,6 @@ const ContextGlobalProvider = ({ children }) => {
 
     //Manage Error Message
     const [errorMessage, getErrorMessage] = useState('');
-    // console.log('Error Message :', errorMessage );
 
 // Create New User
 const createNewUser = async (newUser) => {
@@ -32,7 +31,6 @@ const [confirmedEmail, setConfirmedEmail] = useState();
 
 //Get Id Of User Who Is Connected
 const [userLoggedId, setUserLoggedId] = useState();
-
 
 //Post Confirmation Code
 const userConfirmation = async (confirmationData) => {
@@ -52,8 +50,6 @@ const userConfirmation = async (confirmationData) => {
 
     const [userId, setUserId] = useState();
     // console.log('Id of User Connected : ', userId);
-
-
 
 const checkLoginData = async (checkData) => {
         try {

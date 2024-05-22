@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useContextGlobal } from '../models/ContextGlobal';
 import { AnimatePresence, motion} from 'framer-motion';
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5";
 
 
 const Login = () => {
@@ -12,6 +14,10 @@ const Login = () => {
 
   const {checkLoginData, setConfirmedEmail, errorMessage} = useContextGlobal();
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmitLoginData = (data) => {
     const checkUser = {
@@ -56,7 +62,17 @@ const Login = () => {
 
           <div className='flex flex-col gap-[5px] items-start'>
             <label htmlFor="" className='block text-white text-base'>Mot de passe</label>
-            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] ' type="text" />
+            
+            <input {...register("password", { required: true })} placeholder='Entrez votre mot de passe ici' name='password'className='w-full bg-[#093648] rounded-[5px]  text-sm text-[#ffff] border border-[#fff] placeholder-[#4A4A4A] py-[8px] pl-[15px] outline-none appearance-none caret-[#fff] leading-tight' type={showPassword ? "text" : "password"} />
+            {/* {`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.password ? 'border-red-500' : ''}`} */}
+            
+            <button
+              type="button"
+              className="absolute right-8 top-[201px] transform -translate-y-1/2 bg-transparent border-none cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+            </button>
             {errors.password && <span style={{color: '#DA5643', fontSize: '12px'}}>Le mot de passe est obligatoir</span>}
           </div>
 
@@ -64,7 +80,7 @@ const Login = () => {
                                           initial={{ opacity: 0 }}
                                           animate={{ opacity: 1 }}
                                           exit={{ opacity: 1 }}
-                                          transition={{ duration: 0.6 }}
+                                          transition={{ duration: 0.2 }}
                 className=' text-red-600 font-normal text-sm'>{errorMessage}</motion.p>)}
                 
 
