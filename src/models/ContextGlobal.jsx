@@ -13,7 +13,7 @@ const ContextGlobalProvider = ({ children }) => {
     const navigate = useNavigate();
 
     //Manage Error Message
-    const [errorMessage, getErrorMessage] = useState('');
+    const [errorMessage, getErrorMessage] = useState(null);
 
 // Create New User
 const createNewUser = async (newUser) => {
@@ -61,6 +61,7 @@ const checkLoginData = async (checkData) => {
                     setUserId(response.data.user.id);
                     console.log('Id of Logged User :', response.data.user.id);
                     navigate('/dashboard');
+                    getErrorMessage(null)
                     } else {
                     console.error("Les données utilisateur sont manquantes dans la réponse.");
                     }
